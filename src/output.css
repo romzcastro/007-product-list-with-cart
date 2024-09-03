@@ -467,6 +467,9 @@ html {
 .order-4{
   order: 4;
 }
+.mt-10{
+  margin-top: 2.5rem;
+}
 .flex{
   display: flex;
 }
@@ -479,11 +482,23 @@ html {
 .min-h-screen{
   min-height: 100vh;
 }
+.w-1\/2{
+  width: 50%;
+}
+.w-\[75\%\]{
+  width: 75%;
+}
 .w-full{
   width: 100%;
 }
 .w-screen{
   width: 100vw;
+}
+.flex-row{
+  flex-direction: row;
+}
+.flex-col{
+  flex-direction: column;
 }
 .items-center{
   align-items: center;
@@ -491,8 +506,17 @@ html {
 .justify-center{
   justify-content: center;
 }
+.justify-between{
+  justify-content: space-between;
+}
+.justify-evenly{
+  justify-content: space-evenly;
+}
 .gap-2{
   gap: 0.5rem;
+}
+.gap-4{
+  gap: 1rem;
 }
 .rounded-full{
   border-radius: 9999px;
@@ -515,6 +539,14 @@ html {
   --tw-bg-opacity: 1;
   background-color: hsl(20 50% 98% / var(--tw-bg-opacity));
 }
+.bg-secondary_400{
+  --tw-bg-opacity: 1;
+  background-color: hsl(7 20% 60% / var(--tw-bg-opacity));
+}
+.bg-primary_1{
+  --tw-bg-opacity: 1;
+  background-color: hsl(14 86% 42% / var(--tw-bg-opacity));
+}
 .bg-cover{
   background-size: cover;
 }
@@ -524,11 +556,17 @@ html {
 .bg-no-repeat{
   background-repeat: no-repeat;
 }
+.p-2{
+  padding: 0.5rem;
+}
 .p-4{
   padding: 1rem;
 }
 .p-6{
   padding: 1.5rem;
+}
+.p-3{
+  padding: 0.75rem;
 }
 .px-5{
   padding-left: 1.25rem;
@@ -542,11 +580,36 @@ html {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
+.px-3{
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.px-4{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.pb-8{
+  padding-bottom: 2rem;
+}
 .pt-10{
   padding-top: 2.5rem;
 }
+.pb-4{
+  padding-bottom: 1rem;
+}
+.pb-6{
+  padding-bottom: 1.5rem;
+}
 .text-center{
   text-align: center;
+}
+.text-2xl{
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.text-3xl{
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 .text-5xl{
   font-size: 3rem;
@@ -559,11 +622,18 @@ html {
 .font-bold{
   font-weight: 700;
 }
+.font-medium{
+  font-weight: 500;
+}
 .font-normal{
   font-weight: 400;
 }
 .font-semibold{
   font-weight: 600;
+}
+.text-secondary_300{
+  --tw-text-opacity: 1;
+  color: hsl(14 25% 72% / var(--tw-text-opacity));
 }
 .text-secondary_400{
   --tw-text-opacity: 1;
@@ -576,4 +646,12 @@ html {
 .text-secondary_900{
   --tw-text-opacity: 1;
   color: hsl(14 65% 9% / var(--tw-text-opacity));
+}
+.text-secondary_100{
+  --tw-text-opacity: 1;
+  color: hsl(13 31% 94% / var(--tw-text-opacity));
+}
+.text-primary_1{
+  --tw-text-opacity: 1;
+  color: hsl(14 86% 42% / var(--tw-text-opacity));
 }

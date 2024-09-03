@@ -14,7 +14,7 @@
   </head>
   <body class="bg-secondary_50 text-base font-normal flex-center min-h-screen">
     <main class="w-screen">
-      <section class="p-6">
+      <article class="p-6">
         <h1 class="font-bold text-5xl py-6">Desserts</h1>
         <section class="w-full">
           <div class="relative">
@@ -402,12 +402,66 @@
             </div>
           </div>
           <h2 class="pt-10 text-secondary_400">Panna Cotta</h2>
-          <h3 class="font-bold text-secondary_900">
-            Waffle ][\\\\\\\\with Berries
-          </h3>
+          <h3 class="font-bold text-secondary_900">Vanilla Panna Cotta</h3>
           <p class="font-semibold text-secondary_500">$6.50</p>
         </section>
-      </section>
+        <!-- Your Cart -->
+        <section class="p-2 mt-10">
+          <h2 class="font-bold text-3xl text-secondary_500">
+            Your Cart (<span>0</span>)
+          </h2>
+          <div class="flex justify-center">
+            <img
+              class="w-[75%]"
+              src="./assets/images/illustration-empty-cart.svg"
+              alt="illustration-empty-cart"
+            />
+          </div>
+          <p class="font-semibold text-secondary_400 text-center">
+            Your added items will appear here
+          </p>
+        </section>
+        <!-- Order confirmed -->
+        <article class="px-4">
+          <figure class="pb-8">
+            <img
+              src="./assets/images/icon-order-confirmed.svg"
+              alt="icon-order-confirmed"
+            />
+          </figure>
+          <h2 class="font-bold text-5xl">Order Confirmed</h2>
+          <p class="text-secondary_300 pb-8">We hope you enjoy your food!</p>
+          <section class="flex pb-8 justify-evenly">
+            <div class="flex flex-row items-center justify-evenly">
+              <div class="flex">
+                <figure class="w-1/2">
+                  <img
+                    src="./assets/images/image-tiramisu-thumbnail.jpg"
+                    alt="image-tiramisu-thumbnail"
+                  />
+                </figure>
+              </div>
+              <div class="flex flex-col">
+                <h3>Classic Tiramisu</h3>
+                <div class="flex gap-4">
+                  <p class="font-semibold text-primary_1">1x</p>
+                  <p class="text-secondary_400">@<span>$5.50</span></p>
+                </div>
+              </div>
+              <div class="flex"><p class="font-semibold">$5.50</p></div>
+            </div>
+          </section>
+          <div class="font-medium flex justify-between pb-6">
+            <p>Order Total</p>
+            <p class="font-bold text-2xl">$46.50</p>
+          </div>
+          <button
+            class="w-full p-4 bg-primary_1 text-secondary_100 font-medium rounded-full"
+          >
+            Start New Order
+          </button>
+        </article>
+      </article>
     </main>
     <footer class="p-4 text-center">
       <p class="attribution">
