@@ -488,17 +488,14 @@ html {
 .w-1\/2{
   width: 50%;
 }
+.w-\[75\%\]{
+  width: 75%;
+}
 .w-full{
   width: 100%;
 }
 .w-screen{
   width: 100vw;
-}
-.max-w-\[375px\]{
-  max-width: 375px;
-}
-.flex-1{
-  flex: 1 1 0%;
 }
 .flex-col{
   flex-direction: column;
@@ -675,41 +672,20 @@ html {
   .md\:flex{
     display: flex;
   }
-  .md\:max-h-\[240px\]{
-    max-height: 240px;
-  }
-  .md\:max-h-\[256px\]{
-    max-height: 256px;
-  }
   .md\:w-full{
     width: 100%;
   }
-  .md\:min-w-\[375px\]{
-    min-width: 375px;
+  .md\:w-\[25\%\]{
+    width: 25%;
   }
-  .md\:min-w-\[325px\]{
-    min-width: 325px;
+  .md\:w-\[75\%\]{
+    width: 75%;
   }
   .md\:max-w-7xl{
     max-width: 80rem;
   }
-  .md\:max-w-\[240px\]{
-    max-width: 240px;
-  }
-  .md\:max-w-\[256px\]{
-    max-width: 256px;
-  }
-  .md\:max-w-\[320px\]{
-    max-width: 320px;
-  }
   .md\:flex-1{
     flex: 1 1 0%;
-  }
-  .md\:shrink-0{
-    flex-shrink: 0;
-  }
-  .md\:grow{
-    flex-grow: 1;
   }
   .md\:basis-3\/12{
     flex-basis: 25%;
@@ -723,9 +699,6 @@ html {
   .md\:flex-col{
     flex-direction: column;
   }
-  .md\:flex-wrap{
-    flex-wrap: wrap;
-  }
   .md\:gap-4{
     gap: 1rem;
   }
@@ -737,5 +710,11 @@ html {
   }
   .md\:pt-6{
     padding-top: 1.5rem;
+  }
+  .md\:pr-0{
+    padding-right: 0px;
+  }
+  .md\:pt-12{
+    padding-top: 3rem;
   }
 }
