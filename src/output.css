@@ -494,6 +494,12 @@ html {
 .w-screen{
   width: 100vw;
 }
+.max-w-\[375px\]{
+  max-width: 375px;
+}
+.flex-1{
+  flex: 1 1 0%;
+}
 .flex-col{
   flex-direction: column;
 }
@@ -669,14 +675,41 @@ html {
   .md\:flex{
     display: flex;
   }
+  .md\:max-h-\[240px\]{
+    max-height: 240px;
+  }
+  .md\:max-h-\[256px\]{
+    max-height: 256px;
+  }
   .md\:w-full{
     width: 100%;
+  }
+  .md\:min-w-\[375px\]{
+    min-width: 375px;
+  }
+  .md\:min-w-\[325px\]{
+    min-width: 325px;
   }
   .md\:max-w-7xl{
     max-width: 80rem;
   }
-  .md\:basis-3\/4{
-    flex-basis: 75%;
+  .md\:max-w-\[240px\]{
+    max-width: 240px;
+  }
+  .md\:max-w-\[256px\]{
+    max-width: 256px;
+  }
+  .md\:max-w-\[320px\]{
+    max-width: 320px;
+  }
+  .md\:flex-1{
+    flex: 1 1 0%;
+  }
+  .md\:shrink-0{
+    flex-shrink: 0;
+  }
+  .md\:grow{
+    flex-grow: 1;
   }
   .md\:basis-3\/12{
     flex-basis: 25%;
@@ -692,5 +725,17 @@ html {
   }
   .md\:flex-wrap{
     flex-wrap: wrap;
+  }
+  .md\:gap-4{
+    gap: 1rem;
+  }
+  .md\:pb-0{
+    padding-bottom: 0px;
+  }
+  .md\:pt-0{
+    padding-top: 0px;
+  }
+  .md\:pt-6{
+    padding-top: 1.5rem;
   }
 }
