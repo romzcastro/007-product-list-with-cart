@@ -488,14 +488,14 @@ html {
 .w-1\/2{
   width: 50%;
 }
-.w-\[75\%\]{
-  width: 75%;
-}
 .w-full{
   width: 100%;
 }
 .w-screen{
   width: 100vw;
+}
+.min-w-\[20\%\]{
+  min-width: 20%;
 }
 .flex-col{
   flex-direction: column;
@@ -666,32 +666,33 @@ html {
   color: hsl(14 65% 9% / var(--tw-text-opacity));
 }
 @media (min-width: 768px){
+  .md\:m-6{
+    margin: 1.5rem;
+  }
   .md\:mt-0{
     margin-top: 0px;
   }
   .md\:flex{
     display: flex;
   }
+  .md\:h-fit{
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .md\:w-\[30\%\]{
+    width: 30%;
+  }
+  .md\:w-\[70\%\]{
+    width: 70%;
+  }
   .md\:w-full{
     width: 100%;
-  }
-  .md\:w-\[25\%\]{
-    width: 25%;
-  }
-  .md\:w-\[75\%\]{
-    width: 75%;
   }
   .md\:max-w-7xl{
     max-width: 80rem;
   }
   .md\:flex-1{
     flex: 1 1 0%;
-  }
-  .md\:basis-3\/12{
-    flex-basis: 25%;
-  }
-  .md\:basis-9\/12{
-    flex-basis: 75%;
   }
   .md\:flex-row{
     flex-direction: row;
@@ -705,16 +706,10 @@ html {
   .md\:pb-0{
     padding-bottom: 0px;
   }
-  .md\:pt-0{
-    padding-top: 0px;
+  .md\:pt-12{
+    padding-top: 3rem;
   }
   .md\:pt-6{
     padding-top: 1.5rem;
-  }
-  .md\:pr-0{
-    padding-right: 0px;
-  }
-  .md\:pt-12{
-    padding-top: 3rem;
   }
 }
