@@ -860,11 +860,6 @@ html {
   display: none;
 }
 
-.active\:bg-primary_1:active{
-  --tw-bg-opacity: 1;
-  background-color: hsl(14 86% 42% / var(--tw-bg-opacity));
-}
-
 @media (min-width: 768px){
   .md\:m-6{
     margin: 1.5rem;

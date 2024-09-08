@@ -9,9 +9,9 @@
       sizes="32x32"
       href="./assets/images/favicon-32x32.png"
     />
-    <link rel="stylesheet" href="./src/output.css" />
-
+    <script defer src="./js/main.js"></script>
     <script type="text/javascript" src="./js/addToCart.js"></script>
+    <link rel="stylesheet" href="./src/output.css" />
     <title>Frontend Mentor | Product list with cart</title>
   </head>
   <body class="bg-secondary_100 text-base font-normal flex-center min-h-screen">
@@ -456,7 +456,7 @@
         </section>
         <!-- Your Cart -->
         <section
-          class="p-6 mt-10 bg-secondary_50 rounded-lg mb-6 md:mt-0 md:flex md:flex-col md:w-[30%] md:m-6 md:h-fit"
+          class="products-container p-6 mt-10 bg-secondary_50 rounded-lg mb-6 md:mt-0 md:flex md:flex-col md:w-[30%] md:m-6 md:h-fit"
         >
           <h2 class="cart font-bold text-3xl text-primary_1">
             Your Cart (<span>0</span>)
@@ -570,7 +570,5 @@
         >.
       </p>
     </footer>
-    <script src="./js/selectedCart.js"></script>
-    <script src="./js/main.js"></script>
   </body>
 </html>
