@@ -768,10 +768,6 @@ html {
   padding-bottom: 2rem;
 }
 
-.pt-10{
-  padding-top: 2.5rem;
-}
-
 .pt-8{
   padding-top: 2rem;
 }
@@ -854,6 +850,19 @@ html {
 .text-secondary_900{
   --tw-text-opacity: 1;
   color: hsl(14 65% 9% / var(--tw-text-opacity));
+}
+
+.active\:visible:active{
+  visibility: visible;
+}
+
+.active\:hidden:active{
+  display: none;
+}
+
+.active\:bg-primary_1:active{
+  --tw-bg-opacity: 1;
+  background-color: hsl(14 86% 42% / var(--tw-bg-opacity));
 }
 
 @media (min-width: 768px){
