@@ -115,6 +115,7 @@ for (let i = 0; i < carts.length; i++) {
   carts[i].addEventListener('click', () => {
     cartNumbers(products[i]);
     totalCost(products[i]);
+
     event.preventDefault();
   });
 }
@@ -161,7 +162,7 @@ function setItems(products) {
 
 function totalCost(products) {
   let cartCost = localStorage.getItem('totalCost');
-  console.log('My cartCost is', cartCost);
+  console.log('my cartCost is', cartCost);
   console.log(typeof cartCost);
 
   if (cartCost != null) {
@@ -175,14 +176,41 @@ function totalCost(products) {
 function displayCart() {
   let cartItems = localStorage.getItem('productsInCart');
   cartItems = JSON.parse(cartItems);
-  let productsContainer = document.querySelector('products-container');
+  let productsContainer = document.querySelector('.product-header');
+  let cartCost = localStorage.getItem('totalCost');
 
   console.log(cartItems);
   if (cartItems && productsContainer) {
+    console.log('running');
     productsContainer.innerHTML = '';
     Object.values(cartItems).map((item) => {
-      productsContainer.innerHTML += `<div class="products"></div>`;
+      productsContainer.innerHTML += `<div class="products flex flex-col">
+      <h3 class="product-title font-bold text-secondary_900">${item.name}</h3>
+      <div class="flex items-center justify-between border-b-2 border-secondary_100 pb-6">
+      <div class="flex gap-3 items-center">
+      <p class="product-qty font-bold text-primary_1">${
+        item.inCart
+      }<span>x</span></p>
+      <p class="product-price text-secondary_400"><span>@</span>${
+        item.price
+      }0</p>
+      <p class="product-total text-secondary_500 font-bold">$${
+        item.inCart * item.price
+      }</p>
+      </div>
+      <div>
+      <figure class="border-2 border-secondary_300 p-1 rounded-full">
+      <img src="./assets/images/icon-remove-item.svg" alt="icon-remove-item"/>
+      </figure>
+      </div>
+      `;
     });
+
+    productsContainer.innerHTML += `
+          <div class="font-medium flex justify-between py-6 items-center">
+            <p>Order Total</p>
+            <p class="font-bold text-2xl">$${cartCost}0</p>
+          </div>`;
   }
 }
 onLoadCartNumbers();

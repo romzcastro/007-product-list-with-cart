@@ -9,8 +9,7 @@
       sizes="32x32"
       href="./assets/images/favicon-32x32.png"
     />
-    <script defer src="./js/main.js"></script>
-    <script type="text/javascript" src="./js/addToCart.js"></script>
+
     <link rel="stylesheet" href="./src/output.css" />
     <title>Frontend Mentor | Product list with cart</title>
   </head>
@@ -456,7 +455,7 @@
         </section>
         <!-- Your Cart -->
         <section
-          class="products-container p-6 mt-10 bg-secondary_50 rounded-lg mb-6 md:mt-0 md:flex md:flex-col md:w-[30%] md:m-6 md:h-fit"
+          class="product-container p-6 mt-10 bg-secondary_50 rounded-lg mb-6 md:mt-0 md:flex md:flex-col md:w-[30%] md:m-6 md:h-fit"
         >
           <h2 class="cart font-bold text-3xl text-primary_1">
             Your Cart (<span>0</span>)
@@ -473,15 +472,21 @@
               Your added items will appear here
             </p>
           </div>
-          <div class="flex flex-col">
-            <h3 class="font-bold text-secondary_900">Classic Tiramisu</h3>
+          <div class="product-header flex flex-col">
+            <h3 class="product-title font-bold text-secondary_900">
+              Classic Tiramisu
+            </h3>
             <div
               class="flex items-center justify-between border-b-2 border-secondary_100 pb-6"
             >
               <div class="flex gap-3 items-center">
-                <p class="font-bold text-primary_1">1x</p>
-                <p class="text-secondary_400"><span>@</span>$5.50</p>
-                <p class="text-secondary_500 font-bold">$5.50</p>
+                <p class="product-qty font-bold text-primary_1">
+                  1<span>x</span>
+                </p>
+                <p class="product-price text-secondary_400">
+                  <span>@</span>$5.50
+                </p>
+                <p class="product-total text-secondary_500 font-bold">$5.50</p>
               </div>
               <div>
                 <figure class="border-2 border-secondary_300 p-1 rounded-full">
@@ -493,6 +498,8 @@
               </div>
             </div>
           </div>
+          <div class="products"></div>
+          <div class="products-total"></div>
           <div class="font-medium flex justify-between py-6 items-center">
             <p>Order Total</p>
             <p class="font-bold text-2xl">$46.50</p>
@@ -571,4 +578,5 @@
       </p>
     </footer>
   </body>
+  <script defer src="./js/main.js"></script>
 </html>
