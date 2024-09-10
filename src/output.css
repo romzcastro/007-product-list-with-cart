@@ -619,6 +619,10 @@ html {
   height: 16rem;
 }
 
+.h-\[52px\]{
+  height: 52px;
+}
+
 .min-h-screen{
   min-height: 100vh;
 }
@@ -679,25 +683,12 @@ html {
   border-radius: 0.75rem;
 }
 
-.border{
-  border-width: 1px;
-}
-
 .border-2{
   border-width: 2px;
 }
 
-.border-4{
-  border-width: 4px;
-}
-
 .border-b-2{
   border-bottom-width: 2px;
-}
-
-.border-red-500{
-  --tw-border-opacity: 1;
-  border-color: rgb(239 68 68 / var(--tw-border-opacity));
 }
 
 .border-secondary_100{

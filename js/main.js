@@ -115,7 +115,7 @@ for (let i = 0; i < carts.length; i++) {
   carts[i].addEventListener('click', () => {
     cartNumbers(products[i]);
     totalCost(products[i]);
-    // displayCart();
+    displayCart();
     event.preventDefault();
   });
 }
@@ -213,11 +213,20 @@ function cartSelected() {
   const cartBtnSelect = document.getElementById('select-button-01');
   const cartIconSelect = document.getElementById('icon-cart-01');
   const cartTextSelect = document.getElementById('text-cart-01');
+  const cartContainer = document.querySelector('.cart-container');
+  const cartIncrement = document.querySelector('select-increment-01');
+  const cartDecrement = document.querySelector('select-deccrement-01');
 
   cartBtnSelect.addEventListener('click', () => {
     let productNumbers = localStorage.getItem('cartNumbers');
-    productNumbers = parseInt(productNumbers, 0);
-    document.getElementById('cartBtnSelect').textContent = productNumbers;
+    productNumbers = parseInt(productNumbers, 10);
+    document.getElementById('text-cart-01').textContent = productNumbers;
+    cartContainer.classList.add('border-2', 'border-red-500', 'rounded-xl');
+    cartIconSelect.classList.add('hidden');
+    cartTextSelect.classList.add('hidden');
+
+    cartIncrement.classList.remove('hidden');
+    cartDecrement.classList.remove('hidden');
   });
 }
 
