@@ -679,12 +679,25 @@ html {
   border-radius: 0.75rem;
 }
 
+.border{
+  border-width: 1px;
+}
+
 .border-2{
   border-width: 2px;
 }
 
+.border-4{
+  border-width: 4px;
+}
+
 .border-b-2{
   border-bottom-width: 2px;
+}
+
+.border-red-500{
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
 }
 
 .border-secondary_100{
@@ -758,6 +771,10 @@ html {
 .py-6{
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+
+.pb-3{
+  padding-bottom: 0.75rem;
 }
 
 .pb-6{
@@ -850,14 +867,6 @@ html {
 .text-secondary_900{
   --tw-text-opacity: 1;
   color: hsl(14 65% 9% / var(--tw-text-opacity));
-}
-
-.active\:visible:active{
-  visibility: visible;
-}
-
-.active\:hidden:active{
-  display: none;
 }
 
 @media (min-width: 768px){

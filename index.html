@@ -9,7 +9,6 @@
       sizes="32x32"
       href="./assets/images/favicon-32x32.png"
     />
-
     <link rel="stylesheet" href="./src/output.css" />
     <title>Frontend Mentor | Product list with cart</title>
   </head>
@@ -26,7 +25,7 @@
                 <section class="pb-6 md:flex-1">
                   <div class="relative">
                     <div
-                      class="bg-no-repeat bg-cover bg-center h-64 rounded-xl"
+                      class="cart-container bg-no-repeat bg-cover bg-center h-64 rounded-xl"
                       style="
                         background-image: url(./assets/images/image-waffle-mobile.jpg);
                       "
@@ -43,25 +42,26 @@
                       class="absolute w-full bottom-[-10%] flex justify-center items-center"
                     >
                       <button
-                        id=""
+                        id="select-button-01"
                         class="cart-select flex justify-center items-center py-3 px-5 gap-2 bg-secondary_50 rounded-full border-2 border-secondary_300 font-semibold text-secondary_900"
                       >
                         <img
-                          class="hidden order-1 active:visible"
+                          class="hidden order-1"
                           src="./assets/images/icon-decrement-quantity.svg"
                           alt="icon-decrement-quantity"
                         />
                         <img
-                          class="hidden order-4 active:visible"
+                          class="hidden order-4"
                           src="./assets/images/icon-increment-quantity.svg"
                           alt="icon-increment-quantity"
                         />
                         <img
-                          class="order-2 active:hidden"
+                          id="icon-cart-01"
+                          class="order-2"
                           src="./assets/images/icon-add-to-cart.svg"
                           alt="icon-add-to-cart"
                         />
-                        <p class="order-3">Add to Cart</p>
+                        <p id="text-cart-01" class="order-3">Add to Cart</p>
                       </button>
                     </div>
                   </div>
@@ -71,10 +71,11 @@
                   </h3>
                   <p class="font-semibold text-secondary_500">$6.50</p>
                 </section>
+                <!-- Waffle Berries -->
                 <section class="pb-6 md:flex-1">
                   <div class="relative">
                     <div
-                      class="bg-no-repeat bg-cover bg-center h-64 rounded-xl"
+                      class="cart-container bg-no-repeat bg-cover bg-center h-64 rounded-xl"
                       style="
                         background-image: url(./assets/images/image-creme-brulee-mobile.jpg);
                       "
@@ -91,7 +92,6 @@
                       class="absolute w-full bottom-[-10%] flex justify-center items-center"
                     >
                       <button
-                        id=""
                         class="cart-select flex justify-center items-center py-3 px-5 gap-2 bg-secondary_50 rounded-full border-2 border-secondary_300 font-semibold text-secondary_900"
                       >
                         <img
@@ -105,24 +105,25 @@
                           alt="icon-increment-quantity"
                         />
                         <img
+                          id="cartIcon"
                           class="order-2"
                           src="./assets/images/icon-add-to-cart.svg"
                           alt="icon-add-to-cart"
                         />
-                        <p class="order-3">Add to Cart</p>
+                        <p id="cartText" class="order-3">Add to Cart</p>
                       </button>
                     </div>
                   </div>
-                  <h2 class="pt-8 text-secondary_400">Creme Brulee</h2>
+                  <h2 class="pt-8 text-secondary_400">Crème Brûlée</h2>
                   <h3 class="font-bold text-secondary_900">
-                    Vanilla Bean Creme Brulee
+                    Vanilla Bean Crème Brûlée
                   </h3>
                   <p class="font-semibold text-secondary_500">$7.00</p>
                 </section>
                 <section class="pb-6 md:flex-1">
                   <div class="relative">
                     <div
-                      class="bg-no-repeat bg-cover bg-center h-64 rounded-xl"
+                      class="cart-container bg-no-repeat bg-cover bg-center h-64 rounded-xl"
                       style="
                         background-image: url(./assets/images/image-macaron-mobile.jpg);
                       "
@@ -137,7 +138,6 @@
                       class="absolute w-full bottom-[-10%] flex justify-center items-center"
                     >
                       <button
-                        id=""
                         class="cart-select flex justify-center items-center py-3 px-5 gap-2 bg-secondary_100 rounded-full border-2 border-secondary_300 font-semibold text-secondary_900"
                       >
                         <img
@@ -170,7 +170,7 @@
                 <section class="pb-6">
                   <div class="relative">
                     <div
-                      class="bg-no-repeat bg-cover bg-center h-64 rounded-xl"
+                      class="cart-container bg-no-repeat bg-cover bg-center h-64 rounded-xl"
                       style="
                         background-image: url(./assets/images/image-tiramisu-mobile.jpg);
                       "
@@ -187,7 +187,6 @@
                       class="absolute w-full bottom-[-10%] flex justify-center items-center"
                     >
                       <button
-                        id=""
                         class="cart-select flex justify-center items-center py-3 px-5 gap-2 bg-secondary_50 rounded-full border-2 border-secondary_300 font-semibold text-secondary_900"
                       >
                         <img
@@ -216,7 +215,7 @@
                 <section class="pb-6">
                   <div class="relative">
                     <div
-                      class="bg-no-repeat bg-cover bg-center h-64 rounded-xl"
+                      class="cart-container bg-no-repeat bg-cover bg-center h-64 rounded-xl"
                       style="
                         background-image: url(./assets/images/image-baklava-mobile.jpg);
                       "
@@ -233,7 +232,6 @@
                       class="absolute w-full bottom-[-10%] flex justify-center items-center"
                     >
                       <button
-                        id=""
                         class="cart-select flex justify-center items-center py-3 px-5 gap-2 bg-secondary_50 rounded-full border-2 border-secondary_300 font-semibold text-secondary_900"
                       >
                         <img
@@ -262,9 +260,9 @@
                   <p class="font-semibold text-secondary_500">$4.00</p>
                 </section>
                 <section class="pb-6">
-                  <div class="relative">
+                  <div class="c relative">
                     <div
-                      class="bg-no-repeat bg-cover bg-center h-64 rounded-xl"
+                      class="cart-container bg-no-repeat bg-cover bg-center h-64 rounded-xl"
                       style="
                         background-image: url(./assets/images/image-meringue-mobile.jpg);
                       "
@@ -281,7 +279,6 @@
                       class="absolute w-full bottom-[-10%] flex justify-center items-center"
                     >
                       <button
-                        id=""
                         class="cart-select flex justify-center items-center py-3 px-5 gap-2 bg-secondary_50 rounded-full border-2 border-secondary_300 font-semibold text-secondary_900"
                       >
                         <img
@@ -314,7 +311,7 @@
                 <section class="pb-6">
                   <div class="relative">
                     <div
-                      class="bg-no-repeat bg-cover bg-center h-64 rounded-xl"
+                      class="cart-container bg-no-repeat bg-cover bg-center h-64 rounded-xl"
                       style="
                         background-image: url(./assets/images/image-cake-mobile.jpg);
                       "
@@ -329,7 +326,6 @@
                       class="absolute w-full bottom-[-10%] flex justify-center items-center"
                     >
                       <button
-                        id=""
                         class="cart-select flex justify-center items-center py-3 px-5 gap-2 bg-secondary_50 rounded-full border-2 border-secondary_300 font-semibold text-secondary_900"
                       >
                         <img
@@ -358,7 +354,7 @@
                 <section class="pb-6">
                   <div class="relative">
                     <div
-                      class="bg-no-repeat bg-cover bg-center h-64 rounded-xl"
+                      class="cart-container bg-no-repeat bg-cover bg-center h-64 rounded-xl"
                       style="
                         background-image: url(./assets/images/image-brownie-mobile.jpg);
                       "
@@ -375,7 +371,6 @@
                       class="absolute w-full bottom-[-10%] flex justify-center items-center"
                     >
                       <button
-                        id=""
                         class="cart-select flex justify-center items-center py-3 px-5 gap-2 bg-secondary_50 rounded-full border-2 border-secondary_300 font-semibold text-secondary_900"
                       >
                         <img
@@ -406,7 +401,7 @@
                 <section class="pb-6">
                   <div class="relative">
                     <div
-                      class="bg-no-repeat bg-cover bg-center h-64 rounded-xl"
+                      class="cart-container bg-no-repeat bg-cover bg-center h-64 rounded-xl"
                       style="
                         background-image: url(./assets/images/image-panna-cotta-mobile.jpg);
                       "
@@ -421,7 +416,6 @@
                       class="absolute w-full bottom-[-10%] flex justify-center items-center"
                     >
                       <button
-                        id=""
                         class="cart-select flex justify-center items-center py-3 px-5 gap-2 bg-secondary_50 rounded-full border-2 border-secondary_300 font-semibold text-secondary_900"
                       >
                         <img
@@ -468,18 +462,18 @@
                 alt="illustration-empty-cart"
               />
             </figure>
-            <p class="font-semibold text-secondary_400 text-center">
+            <p class="font-semibold text-secondary_400 text-center pb-3">
               Your added items will appear here
             </p>
           </div>
           <div class="product-header flex flex-col">
-            <h3 class="product-title font-bold text-secondary_900">
+            <!-- <h3 class="product-title font-bold text-secondary_900">
               Classic Tiramisu
-            </h3>
+            </h3> -->
             <div
               class="flex items-center justify-between border-b-2 border-secondary_100 pb-6"
             >
-              <div class="flex gap-3 items-center">
+              <!-- <div class="flex gap-3 items-center">
                 <p class="product-qty font-bold text-primary_1">
                   1<span>x</span>
                 </p>
@@ -495,15 +489,15 @@
                     alt="icon-remove-item"
                   />
                 </figure>
-              </div>
+              </div> -->
             </div>
           </div>
           <div class="products"></div>
           <div class="products-total"></div>
-          <div class="font-medium flex justify-between py-6 items-center">
+          <!-- <div class="font-medium flex justify-between py-6 items-center">
             <p>Order Total</p>
             <p class="font-bold text-2xl">$46.50</p>
-          </div>
+          </div> -->
           <div class="flex bg-secondary_100 p-3 rounded-lg mb-6 items-center">
             <figure class="flex justify-center min-w-[20%]">
               <img
@@ -579,4 +573,5 @@
     </footer>
   </body>
   <script defer src="./js/main.js"></script>
+  <script defer src="./js/selectedCart.js"></script>
 </html>
