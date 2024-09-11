@@ -214,16 +214,24 @@ function cartSelected() {
   const cartIconSelect = document.getElementById('icon-cart-01');
   const cartTextSelect = document.getElementById('text-cart-01');
   const cartContainer = document.querySelector('.cart-container');
-  const cartIncrement = document.querySelector('select-increment-01');
-  const cartDecrement = document.querySelector('select-deccrement-01');
+  const cartIncrement = document.getElementById('select-increment-01');
+  const cartDecrement = document.getElementById('select-decrement-01');
 
   cartBtnSelect.addEventListener('click', () => {
     let productNumbers = localStorage.getItem('cartNumbers');
-    productNumbers = parseInt(productNumbers, 10);
+    productNumbers = parseInt(productNumbers);
     document.getElementById('text-cart-01').textContent = productNumbers;
-    cartContainer.classList.add('border-2', 'border-red-500', 'rounded-xl');
+    // cart-container
+    cartContainer.classList.add('border-2', 'border-red-400');
+
+    // select-button-01
+    cartBtnSelect.classList.add('bg-primary_1');
+    cartBtnSelect.classList.add('justify-between');
+    cartBtnSelect.classList.remove('bg-secondary_50');
+    cartBtnSelect.classList.remove('justify-center');
+
     cartIconSelect.classList.add('hidden');
-    cartTextSelect.classList.add('hidden');
+    cartTextSelect.classList.add('font-semibold', 'text-secondary_50');
 
     cartIncrement.classList.remove('hidden');
     cartDecrement.classList.remove('hidden');

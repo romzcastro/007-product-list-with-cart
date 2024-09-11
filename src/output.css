@@ -631,6 +631,10 @@ html {
   width: 50%;
 }
 
+.w-\[159\.86px\]{
+  width: 159.86px;
+}
+
 .w-full{
   width: 100%;
 }
@@ -641,6 +645,14 @@ html {
 
 .min-w-\[20\%\]{
   min-width: 20%;
+}
+
+.cursor-none{
+  cursor: none;
+}
+
+.cursor-pointer{
+  cursor: pointer;
 }
 
 .flex-col{
@@ -701,6 +713,25 @@ html {
   border-color: hsl(14 25% 72% / var(--tw-border-opacity));
 }
 
+.border-secondary_50{
+  --tw-border-opacity: 1;
+  border-color: hsl(20 50% 98% / var(--tw-border-opacity));
+}
+
+.border-red-500{
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
+}
+
+.border-primary_1{
+  --tw-border-opacity: 1;
+  border-color: hsl(14 86% 42% / var(--tw-border-opacity));
+}
+
+.border-primary_1\/0{
+  border-color: hsl(14 86% 42% / 0);
+}
+
 .bg-primary_1{
   --tw-bg-opacity: 1;
   background-color: hsl(14 86% 42% / var(--tw-bg-opacity));
@@ -714,6 +745,11 @@ html {
 .bg-secondary_50{
   --tw-bg-opacity: 1;
   background-color: hsl(20 50% 98% / var(--tw-bg-opacity));
+}
+
+.bg-secondary_900{
+  --tw-bg-opacity: 1;
+  background-color: hsl(14 65% 9% / var(--tw-bg-opacity));
 }
 
 .bg-cover{
@@ -752,6 +788,11 @@ html {
 .px-5{
   padding-left: 1.25rem;
   padding-right: 1.25rem;
+}
+
+.py-2{
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .py-3{
