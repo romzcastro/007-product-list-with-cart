@@ -218,9 +218,6 @@ function cartSelected() {
   const cartDecrement = document.getElementById('select-decrement-01');
 
   cartBtnSelect.addEventListener('click', () => {
-    let cartItems = localStorage.getItem('cartNumbers');
-    cartItems = JSON.parse(cartItems);
-    document.getElementById('text-cart-01').textContent = cartItems;
     cartContainer.classList.add('border-2', 'border-red-400');
     cartBtnSelect.classList.add('bg-primary_1');
     cartBtnSelect.classList.add('justify-between');
@@ -230,6 +227,19 @@ function cartSelected() {
     cartTextSelect.classList.add('font-semibold', 'text-secondary_50');
     cartIncrement.classList.remove('hidden');
     cartDecrement.classList.remove('hidden');
+
+    // Retrieve cart items from localStorage
+    const cartItems = localStorage.getItem('productsInCart');
+    const productsInCart = cartItems ? JSON.parse(cartItems) : {};
+
+    // Display the inCart value for the first product in the cart
+    const firstProduct = Object.values(productsInCart)[0];
+    const inCartValue = firstProduct ? firstProduct.inCart : 0;
+
+    // Update the text content of text-cart-01 with the inCart value
+    if (cartTextSelect) {
+      cartTextSelect.textContent = inCartValue;
+    }
   });
 }
 
@@ -242,9 +252,6 @@ function cartSelected02() {
   const cartDecrement2 = document.getElementById('select-decrement-02');
 
   cartBtnSelect2.addEventListener('click', () => {
-    let cartItems = localStorage.getItem('cartNumbers');
-    cartItems = JSON.parse(cartItems);
-    document.getElementById('text-cart-02').textContent = cartItems;
     cartContainer.classList.add('border-2', 'border-red-400');
     cartBtnSelect2.classList.add('bg-primary_1');
     cartBtnSelect2.classList.add('justify-between');
@@ -254,8 +261,22 @@ function cartSelected02() {
     cartTextSelect2.classList.add('font-semibold', 'text-secondary_50');
     cartIncrement2.classList.remove('hidden');
     cartDecrement2.classList.remove('hidden');
+
+    // Retrieve cart items from localStorage
+    const cartItems2 = localStorage.getItem('productsInCart');
+    const productsInCart = cartItems2 ? JSON.parse(cartItems2) : {};
+
+    // Display the inCart value for the first product in the cart
+    const firstProduct2 = Object.values(productsInCart)[0];
+    const inCartValue2 = firstProduct2 ? firstProduct2.inCart : 0;
+
+    // Update the text content of text-cart-01 with the inCart value
+    if (cartTextSelect2) {
+      cartTextSelect2.textContent = inCartValue2;
+    }
   });
 }
+
 onLoadCartNumbers();
 displayCart();
 cartSelected();
