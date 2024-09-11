@@ -244,12 +244,14 @@ function cartSelected() {
 }
 
 function cartSelected02() {
-  const cartContainer = document.querySelector('.cart-container02');
+  const cartContainer = document.querySelector('.cart-container');
   const cartBtnSelect2 = document.getElementById('select-button-02');
   const cartIconSelect2 = document.getElementById('icon-cart-02');
   const cartTextSelect2 = document.getElementById('text-cart-02');
   const cartIncrement2 = document.getElementById('select-increment-02');
   const cartDecrement2 = document.getElementById('select-decrement-02');
+
+  let productIndex = 1;
 
   cartBtnSelect2.addEventListener('click', () => {
     cartContainer.classList.add('border-2', 'border-red-400');
@@ -262,17 +264,53 @@ function cartSelected02() {
     cartIncrement2.classList.remove('hidden');
     cartDecrement2.classList.remove('hidden');
 
-    // Retrieve cart items from localStorage
-    const cartItems2 = localStorage.getItem('productsInCart');
-    const productsInCart = cartItems2 ? JSON.parse(cartItems2) : {};
+    // Retrieve updated cart items from localStorage
+    let cartItems = JSON.parse(localStorage.getItem('productsInCart'));
 
-    // Display the inCart value for the first product in the cart
-    const firstProduct2 = Object.values(productsInCart)[0];
-    const inCartValue2 = firstProduct2 ? firstProduct2.inCart : 0;
+    // Check if cartItems exist, and retrieve the product with the correct index (for example, index 1)
+    let productName = products[1].name; // Assuming you want the 2nd product, change this index as needed.
+    if (cartItems && cartItems[productName]) {
+      // Display the current inCart value for this product
+      cartTextSelect2.textContent = cartItems[productName].inCart;
+    } else {
+      // If the product is not in the cart, default to 0
+      cartTextSelect2.textContent = 0;
+    }
+  });
+}
 
-    // Update the text content of text-cart-01 with the inCart value
-    if (cartTextSelect2) {
-      cartTextSelect2.textContent = inCartValue2;
+function cartSelected03() {
+  const cartContainer = document.querySelector('.cart-container');
+  const cartBtnSelect3 = document.getElementById('select-button-03');
+  const cartIconSelect3 = document.getElementById('icon-cart-03');
+  const cartTextSelect3 = document.getElementById('text-cart-03');
+  const cartIncrement3 = document.getElementById('select-increment-03');
+  const cartDecrement3 = document.getElementById('select-decrement-03');
+
+  let productIndex = 1;
+
+  cartBtnSelect3.addEventListener('click', () => {
+    cartContainer.classList.add('border-2', 'border-red-400');
+    cartBtnSelect3.classList.add('bg-primary_1');
+    cartBtnSelect3.classList.add('justify-between');
+    cartBtnSelect3.classList.remove('bg-secondary_50');
+    cartBtnSelect3.classList.remove('justify-center');
+    cartIconSelect3.classList.add('hidden');
+    cartTextSelect3.classList.add('font-semibold', 'text-secondary_50');
+    cartIncrement3.classList.remove('hidden');
+    cartDecrement3.classList.remove('hidden');
+
+    // Retrieve updated cart items from localStorage
+    let cartItems = JSON.parse(localStorage.getItem('productsInCart'));
+
+    // Check if cartItems exist, and retrieve the product with the correct index (for example, index 1)
+    let productName = products[1].name; // Assuming you want the 2nd product, change this index as needed.
+    if (cartItems && cartItems[productName]) {
+      // Display the current inCart value for this product
+      cartTextSelect3.textContent = cartItems[productName].inCart;
+    } else {
+      // If the product is not in the cart, default to 0
+      cartTextSelect3.textContent = 0;
     }
   });
 }
@@ -281,3 +319,4 @@ onLoadCartNumbers();
 displayCart();
 cartSelected();
 cartSelected02();
+cartSelected03();
