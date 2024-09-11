@@ -1,4 +1,4 @@
-let carts = document.querySelectorAll('.cart-select');
+let carts = document.querySelectorAll('.cart-btn');
 let products = [
   {
     image: {
@@ -210,34 +210,53 @@ function displayCart() {
 }
 
 function cartSelected() {
+  const cartContainer = document.querySelector('.cart-container');
   const cartBtnSelect = document.getElementById('select-button-01');
   const cartIconSelect = document.getElementById('icon-cart-01');
   const cartTextSelect = document.getElementById('text-cart-01');
-  const cartContainer = document.querySelector('.cart-container');
   const cartIncrement = document.getElementById('select-increment-01');
   const cartDecrement = document.getElementById('select-decrement-01');
 
   cartBtnSelect.addEventListener('click', () => {
-    let productNumbers = localStorage.getItem('cartNumbers');
-    productNumbers = parseInt(productNumbers);
-    document.getElementById('text-cart-01').textContent = productNumbers;
-    // cart-container
+    let cartItems = localStorage.getItem('cartNumbers');
+    cartItems = JSON.parse(cartItems);
+    document.getElementById('text-cart-01').textContent = cartItems;
     cartContainer.classList.add('border-2', 'border-red-400');
-
-    // select-button-01
     cartBtnSelect.classList.add('bg-primary_1');
     cartBtnSelect.classList.add('justify-between');
     cartBtnSelect.classList.remove('bg-secondary_50');
     cartBtnSelect.classList.remove('justify-center');
-
     cartIconSelect.classList.add('hidden');
     cartTextSelect.classList.add('font-semibold', 'text-secondary_50');
-
     cartIncrement.classList.remove('hidden');
     cartDecrement.classList.remove('hidden');
   });
 }
 
+function cartSelected02() {
+  const cartContainer = document.querySelector('.cart-container02');
+  const cartBtnSelect2 = document.getElementById('select-button-02');
+  const cartIconSelect2 = document.getElementById('icon-cart-02');
+  const cartTextSelect2 = document.getElementById('text-cart-02');
+  const cartIncrement2 = document.getElementById('select-increment-02');
+  const cartDecrement2 = document.getElementById('select-decrement-02');
+
+  cartBtnSelect2.addEventListener('click', () => {
+    let cartItems = localStorage.getItem('cartNumbers');
+    cartItems = JSON.parse(cartItems);
+    document.getElementById('text-cart-02').textContent = cartItems;
+    cartContainer.classList.add('border-2', 'border-red-400');
+    cartBtnSelect2.classList.add('bg-primary_1');
+    cartBtnSelect2.classList.add('justify-between');
+    cartBtnSelect2.classList.remove('bg-secondary_50');
+    cartBtnSelect2.classList.remove('justify-center');
+    cartIconSelect2.classList.add('hidden');
+    cartTextSelect2.classList.add('font-semibold', 'text-secondary_50');
+    cartIncrement2.classList.remove('hidden');
+    cartDecrement2.classList.remove('hidden');
+  });
+}
 onLoadCartNumbers();
 displayCart();
 cartSelected();
+cartSelected02();
