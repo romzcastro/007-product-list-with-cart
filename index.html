@@ -21,10 +21,11 @@
           </h1>
           <form id="form" action="/">
             <section class="md:flex md:gap-4 md:pt-6">
-              <section>
+              <section class="md:flex gap-4">
                 <section class="pb-6 md:flex-1">
                   <div class="relative">
                     <div
+                      id="cart-container01"
                       class="cart-container bg-no-repeat bg-cover bg-center h-64 rounded-xl border-primary_1"
                       style="
                         background-image: url(./assets/images/image-waffle-mobile.jpg);
@@ -42,7 +43,7 @@
                       class="absolute w-full bottom-[-10%] flex justify-center items-center"
                     >
                       <button
-                        id="select-button-01"
+                        id="cart-btn01"
                         class="cart-btn flex justify-center items-center p-3 gap-2 bg-secondary_50 rounded-full border-2 border-secondary_300 font-semibold text-secondary_900 h-[52px] w-[159.86px]"
                       >
                         <img
@@ -77,6 +78,7 @@
                 <section class="pb-6 md:flex-1">
                   <div class="relative">
                     <div
+                      id="cart-container02"
                       class="cart-container bg-no-repeat bg-cover bg-center h-64 rounded-xl border-primary_1"
                       style="
                         background-image: url(./assets/images/image-creme-brulee-mobile.jpg);
@@ -94,7 +96,7 @@
                       class="absolute w-full bottom-[-10%] flex justify-center items-center"
                     >
                       <button
-                        id="select-button-02"
+                        id="cart-btn02"
                         class="cart-btn flex justify-center items-center p-3 gap-2 bg-secondary_50 rounded-full border-2 border-secondary_300 font-semibold text-secondary_900 h-[52px] w-[159.86px]"
                       >
                         <img
@@ -129,24 +131,23 @@
                 <section class="pb-6 md:flex-1">
                   <div class="relative">
                     <div
+                      id="cart-container03"
                       class="cart-container bg-no-repeat bg-cover bg-center h-64 rounded-xl border-primary_1"
                       style="
                         background-image: url(./assets/images/image-macaron-mobile.jpg);
                       "
                     >
-                      <figure>
-                        <img
-                          class="invisible"
-                          src="./assets/images/image-macaron-mobile.jpg"
-                          alt="image-macaron-mobile"
-                        />
-                      </figure>
+                      <img
+                        class="invisible"
+                        src="./assets/images/image-macaron-mobile.jpg"
+                        alt="image-macaron-mobile"
+                      />
                     </div>
                     <div
                       class="absolute w-full bottom-[-10%] flex justify-center items-center"
                     >
                       <button
-                        id="select-button-03"
+                        id="cart-btn03"
                         class="cart-btn flex justify-center items-center p-3 gap-2 bg-secondary_50 rounded-full border-2 border-secondary_300 font-semibold text-secondary_900 h-[52px] w-[159.86px]"
                       >
                         <img
@@ -175,49 +176,52 @@
                   <h3 class="font-bold text-secondary_900">
                     Macaron Mix of Five
                   </h3>
-                  <p class="font-semibold text-secondary_500">$7.00</p>
+                  <p class="font-semibold text-secondary_500">$8.00</p>
                 </section>
               </section>
-              <!-- macaron mix of five -->
+              <!-- Macaron Mix of Five -->
               <section>
-                <section class="pb-6">
+                <section class="pb-6 md:flex-1">
                   <div class="relative">
                     <div
-                      class="cart-container bg-no-repeat bg-cover bg-center h-64 rounded-xl"
+                      id="cart-container04"
+                      class="cart-container bg-no-repeat bg-cover bg-center h-64 rounded-xl border-primary_1"
                       style="
                         background-image: url(./assets/images/image-tiramisu-mobile.jpg);
                       "
                     >
-                      <figure>
-                        <img
-                          class="invisible"
-                          src="./assets/images/image-tiramisu-mobile.jpg"
-                          alt="image-tiramisu-mobile"
-                        />
-                      </figure>
+                      <img
+                        class="invisible"
+                        src="./assets/images/image-tiramisu-mobile.jpg"
+                        alt="image-tiramisu-mobile"
+                      />
                     </div>
                     <div
                       class="absolute w-full bottom-[-10%] flex justify-center items-center"
                     >
                       <button
-                        class="cart-btn flex justify-center items-center py-3 px-5 gap-2 bg-secondary_50 rounded-full border-2 border-secondary_300 font-semibold text-secondary_900"
+                        id="cart-btn04"
+                        class="cart-btn flex justify-center items-center p-3 gap-2 bg-secondary_50 rounded-full border-2 border-secondary_300 font-semibold text-secondary_900 h-[52px] w-[159.86px]"
                       >
                         <img
-                          class="hidden order-1"
+                          id="select-decrement-04"
+                          class="hidden order-1 border-2 border-secondary_50 rounded-full p-1 py-2 cursor-pointer"
                           src="./assets/images/icon-decrement-quantity.svg"
                           alt="icon-decrement-quantity"
                         />
                         <img
-                          class="hidden order-4"
+                          id="select-increment-04"
+                          class="hidden order-4 border-2 border-secondary_50 rounded-full p-1 cursor-pointer"
                           src="./assets/images/icon-increment-quantity.svg"
                           alt="icon-increment-quantity"
                         />
                         <img
+                          id="icon-cart-04"
                           class="order-2"
                           src="./assets/images/icon-add-to-cart.svg"
                           alt="icon-add-to-cart"
                         />
-                        <p class="order-3">Add to Cart</p>
+                        <p id="text-cart-04" class="order-3">Add to Cart</p>
                       </button>
                     </div>
                   </div>
@@ -225,44 +229,48 @@
                   <h3 class="font-bold text-secondary_900">Classic Tiramisu</h3>
                   <p class="font-semibold text-secondary_500">$5.50</p>
                 </section>
-                <section class="pb-6">
+                <!-- Classic Tiramisu -->
+                <section class="pb-6 md:flex-1">
                   <div class="relative">
                     <div
-                      class="cart-container bg-no-repeat bg-cover bg-center h-64 rounded-xl"
+                      id="cart-container05"
+                      class="cart-container bg-no-repeat bg-cover bg-center h-64 rounded-xl border-primary_1"
                       style="
                         background-image: url(./assets/images/image-baklava-mobile.jpg);
                       "
                     >
-                      <figure>
-                        <img
-                          class="invisible"
-                          src="./assets/images/image-baklava-mobile.jpg"
-                          alt="image-baklava-mobile"
-                        />
-                      </figure>
+                      <img
+                        class="invisible"
+                        src="./assets/images/image-baklava-mobile.jpg"
+                        alt="image-baklava-mobile"
+                      />
                     </div>
                     <div
                       class="absolute w-full bottom-[-10%] flex justify-center items-center"
                     >
                       <button
-                        class="cart-btn flex justify-center items-center py-3 px-5 gap-2 bg-secondary_50 rounded-full border-2 border-secondary_300 font-semibold text-secondary_900"
+                        id="cart-btn05"
+                        class="cart-btn flex justify-center items-center p-3 gap-2 bg-secondary_50 rounded-full border-2 border-secondary_300 font-semibold text-secondary_900 h-[52px] w-[159.86px]"
                       >
                         <img
-                          class="hidden order-1"
+                          id="select-decrement-05"
+                          class="hidden order-1 border-2 border-secondary_50 rounded-full p-1 py-2 cursor-pointer"
                           src="./assets/images/icon-decrement-quantity.svg"
                           alt="icon-decrement-quantity"
                         />
                         <img
-                          class="hidden order-4"
+                          id="select-increment-05"
+                          class="hidden order-4 border-2 border-secondary_50 rounded-full p-1 cursor-pointer"
                           src="./assets/images/icon-increment-quantity.svg"
                           alt="icon-increment-quantity"
                         />
                         <img
+                          id="icon-cart-05"
                           class="order-2"
                           src="./assets/images/icon-add-to-cart.svg"
                           alt="icon-add-to-cart"
                         />
-                        <p class="order-3">Add to Cart</p>
+                        <p id="text-cart-05" class="order-3">Add to Cart</p>
                       </button>
                     </div>
                   </div>
@@ -270,192 +278,60 @@
                   <h3 class="font-bold text-secondary_900">
                     Pistachio Baklava
                   </h3>
-                  <p class="font-semibold text-secondary_500">$4.00</p>
+                  <p class="font-semibold text-secondary_500">$5.50</p>
                 </section>
-                <section class="pb-6">
-                  <div class="c relative">
+                <!--  Baklava -->
+                <section class="pb-6 md:flex-1">
+                  <div class="relative">
                     <div
-                      class="cart-container bg-no-repeat bg-cover bg-center h-64 rounded-xl"
+                      id="cart-container06"
+                      class="cart-container bg-no-repeat bg-cover bg-center h-64 rounded-xl border-primary_1"
                       style="
                         background-image: url(./assets/images/image-meringue-mobile.jpg);
                       "
                     >
-                      <figure>
-                        <img
-                          class="invisible"
-                          src="./assets/images/image-waffle-mobile.jpg"
-                          alt="image-waffle-mobile"
-                        />
-                      </figure>
-                    </div>
-                    <div
-                      class="absolute w-full bottom-[-10%] flex justify-center items-center"
-                    >
-                      <button
-                        class="cart-btn flex justify-center items-center py-3 px-5 gap-2 bg-secondary_50 rounded-full border-2 border-secondary_300 font-semibold text-secondary_900"
-                      >
-                        <img
-                          class="hidden order-1"
-                          src="./assets/images/icon-decrement-quantity.svg"
-                          alt="icon-decrement-quantity"
-                        />
-                        <img
-                          class="hidden order-4"
-                          src="./assets/images/icon-increment-quantity.svg"
-                          alt="icon-increment-quantity"
-                        />
-                        <img
-                          class="order-2"
-                          src="./assets/images/icon-add-to-cart.svg"
-                          alt="icon-add-to-cart"
-                        />
-                        <p class="order-3">Add to Cart</p>
-                      </button>
-                    </div>
-                  </div>
-                  <h2 class="pt-8 text-secondary_400">Pie</h2>
-                  <h3 class="font-bold text-secondary_900">
-                    Lemon Meringue Pie
-                  </h3>
-                  <p class="font-semibold text-secondary_500">$5.00</p>
-                </section>
-              </section>
-              <section>
-                <section class="pb-6">
-                  <div class="relative">
-                    <div
-                      class="cart-container bg-no-repeat bg-cover bg-center h-64 rounded-xl"
-                      style="
-                        background-image: url(./assets/images/image-cake-mobile.jpg);
-                      "
-                    >
                       <img
                         class="invisible"
-                        src="./assets/images/image-cake-mobile.jpg"
-                        alt="image-cake-mobile"
+                        src="./assets/images/image-waffle-mobile.jpg"
+                        alt="image-waffle-mobile"
                       />
                     </div>
                     <div
                       class="absolute w-full bottom-[-10%] flex justify-center items-center"
                     >
                       <button
-                        class="cart-btn flex justify-center items-center py-3 px-5 gap-2 bg-secondary_50 rounded-full border-2 border-secondary_300 font-semibold text-secondary_900"
+                        id="cart-btn06"
+                        class="cart-btn flex justify-center items-center p-3 gap-2 bg-secondary_50 rounded-full border-2 border-secondary_300 font-semibold text-secondary_900 h-[52px] w-[159.86px]"
                       >
                         <img
-                          class="hidden order-1"
+                          id="select-decrement-06"
+                          class="hidden order-1 border-2 border-secondary_50 rounded-full p-1 py-2 cursor-pointer"
                           src="./assets/images/icon-decrement-quantity.svg"
                           alt="icon-decrement-quantity"
                         />
                         <img
-                          class="hidden order-4"
+                          id="select-increment-06"
+                          class="hidden order-4 border-2 border-secondary_50 rounded-full p-1 cursor-pointer"
                           src="./assets/images/icon-increment-quantity.svg"
                           alt="icon-increment-quantity"
                         />
                         <img
+                          id="icon-cart-06"
                           class="order-2"
                           src="./assets/images/icon-add-to-cart.svg"
                           alt="icon-add-to-cart"
                         />
-                        <p class="order-3">Add to Cart</p>
+                        <p id="text-cart-06" class="order-3">Add to Cart</p>
                       </button>
                     </div>
                   </div>
-                  <h2 class="pt-8 text-secondary_400">Cake</h2>
-                  <h3 class="font-bold text-secondary_900">Red Velvet Cake</h3>
-                  <p class="font-semibold text-secondary_500">$4.50</p>
-                </section>
-                <section class="pb-6">
-                  <div class="relative">
-                    <div
-                      class="cart-container bg-no-repeat bg-cover bg-center h-64 rounded-xl"
-                      style="
-                        background-image: url(./assets/images/image-brownie-mobile.jpg);
-                      "
-                    >
-                      <figure>
-                        <img
-                          class="invisible"
-                          src="./assets/images/image-brownie-mobile.jpg"
-                          alt="image-brownie-mobile"
-                        />
-                      </figure>
-                    </div>
-                    <div
-                      class="absolute w-full bottom-[-10%] flex justify-center items-center"
-                    >
-                      <button
-                        class="cart-btn flex justify-center items-center py-3 px-5 gap-2 bg-secondary_50 rounded-full border-2 border-secondary_300 font-semibold text-secondary_900"
-                      >
-                        <img
-                          class="hidden order-1"
-                          src="./assets/images/icon-decrement-quantity.svg"
-                          alt="icon-decrement-quantity"
-                        />
-                        <img
-                          class="hidden order-4"
-                          src="./assets/images/icon-increment-quantity.svg"
-                          alt="icon-increment-quantity"
-                        />
-                        <img
-                          class="order-2"
-                          src="./assets/images/icon-add-to-cart.svg"
-                          alt="icon-add-to-cart"
-                        />
-                        <p class="order-3">Add to Cart</p>
-                      </button>
-                    </div>
-                  </div>
-                  <h2 class="pt-8 text-secondary_400">Brownie</h2>
+                  <h2 class="pt-8 text-secondary_400">Baklava</h2>
                   <h3 class="font-bold text-secondary_900">
-                    Salted Caramel Brownie
+                    Pistachio Baklava
                   </h3>
                   <p class="font-semibold text-secondary_500">$5.50</p>
                 </section>
-                <section class="pb-6">
-                  <div class="relative">
-                    <div
-                      class="cart-container bg-no-repeat bg-cover bg-center h-64 rounded-xl"
-                      style="
-                        background-image: url(./assets/images/image-panna-cotta-mobile.jpg);
-                      "
-                    >
-                      <img
-                        class="invisible"
-                        src="./assets/images/image-panna-cotta-mobile.jpg"
-                        alt="image-panna-cotta-mobile"
-                      />
-                    </div>
-                    <div
-                      class="absolute w-full bottom-[-10%] flex justify-center items-center"
-                    >
-                      <button
-                        class="cart-btn flex justify-center items-center py-3 px-5 gap-2 bg-secondary_50 rounded-full border-2 border-secondary_300 font-semibold text-secondary_900"
-                      >
-                        <img
-                          class="hidden order-1"
-                          src="./assets/images/icon-decrement-quantity.svg"
-                          alt="icon-decrement-quantity"
-                        />
-                        <img
-                          class="hidden order-4"
-                          src="./assets/images/icon-increment-quantity.svg"
-                          alt="icon-increment-quantity"
-                        />
-                        <img
-                          class="order-2"
-                          src="./assets/images/icon-add-to-cart.svg"
-                          alt="icon-add-to-cart"
-                        />
-                        <p class="order-3">Add to Cart</p>
-                      </button>
-                    </div>
-                  </div>
-                  <h2 class="pt-8 text-secondary_400">Panna Cotta</h2>
-                  <h3 class="font-bold text-secondary_900">
-                    Vanilla Panna Cotta
-                  </h3>
-                  <p class="font-semibold text-secondary_500">$6.50</p>
-                </section>
+                <!--  Baklava -->
               </section>
             </section>
           </form>

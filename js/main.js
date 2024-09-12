@@ -173,8 +173,10 @@ function totalCost(products) {
 function displayCart() {
   let cartItems = localStorage.getItem('productsInCart');
   cartItems = JSON.parse(cartItems);
+
   let productsContainer = document.querySelector('.product-header');
   let cartCost = localStorage.getItem('totalCost');
+
   if (cartItems && productsContainer) {
     productsContainer.innerHTML = '';
     Object.values(cartItems).map((item) => {
@@ -210,113 +212,140 @@ function displayCart() {
 }
 
 function cartSelected() {
-  const cartContainer = document.querySelector('.cart-container');
-  const cartBtnSelect = document.getElementById('select-button-01');
-  const cartIconSelect = document.getElementById('icon-cart-01');
-  const cartTextSelect = document.getElementById('text-cart-01');
-  const cartIncrement = document.getElementById('select-increment-01');
-  const cartDecrement = document.getElementById('select-decrement-01');
+  const cartBtn01 = document.getElementById('cart-btn01');
+  const cartContainer01 = document.getElementById('cart-container01');
+  const cartIconSelect01 = document.getElementById('icon-cart-01');
+  const cartTextSelect01 = document.getElementById('text-cart-01');
+  const cartIncrement01 = document.getElementById('select-increment-01');
+  const cartDecrement01 = document.getElementById('select-decrement-01');
 
-  cartBtnSelect.addEventListener('click', () => {
-    cartContainer.classList.add('border-2', 'border-red-400');
-    cartBtnSelect.classList.add('bg-primary_1');
-    cartBtnSelect.classList.add('justify-between');
-    cartBtnSelect.classList.remove('bg-secondary_50');
-    cartBtnSelect.classList.remove('justify-center');
-    cartIconSelect.classList.add('hidden');
-    cartTextSelect.classList.add('font-semibold', 'text-secondary_50');
-    cartIncrement.classList.remove('hidden');
-    cartDecrement.classList.remove('hidden');
+  const cartBtn02 = document.getElementById('cart-btn02');
+  const cartContainer02 = document.getElementById('cart-container02');
+  const cartIconSelect02 = document.getElementById('icon-cart-02');
+  const cartTextSelect02 = document.getElementById('text-cart-02');
+  const cartIncrement02 = document.getElementById('select-increment-02');
+  const cartDecrement02 = document.getElementById('select-decrement-02');
 
-    // Retrieve cart items from localStorage
-    const cartItems = localStorage.getItem('productsInCart');
-    const productsInCart = cartItems ? JSON.parse(cartItems) : {};
+  const cartBtn03 = document.getElementById('cart-btn03');
+  const cartContainer03 = document.getElementById('cart-container03');
+  const cartIconSelect03 = document.getElementById('icon-cart-03');
+  const cartTextSelect03 = document.getElementById('text-cart-03');
+  const cartIncrement03 = document.getElementById('select-increment-03');
+  const cartDecrement03 = document.getElementById('select-decrement-03');
 
-    // Display the inCart value for the first product in the cart
-    const firstProduct = Object.values(productsInCart)[0];
-    const inCartValue = firstProduct ? firstProduct.inCart : 0;
+  const cartBtn04 = document.getElementById('cart-btn04');
+  const cartContainer04 = document.getElementById('cart-container04');
+  const cartIconSelect04 = document.getElementById('icon-cart-04');
+  const cartTextSelect04 = document.getElementById('text-cart-04');
+  const cartIncrement04 = document.getElementById('select-increment-04');
+  const cartDecrement04 = document.getElementById('select-decrement-04');
 
-    // Update the text content of text-cart-01 with the inCart value
-    if (cartTextSelect) {
-      cartTextSelect.textContent = inCartValue;
-    }
-  });
+  const cartBtn05 = document.getElementById('cart-btn05');
+  const cartContainer05 = document.getElementById('cart-container05');
+  const cartIconSelect05 = document.getElementById('icon-cart-05');
+  const cartTextSelect05 = document.getElementById('text-cart-05');
+  const cartIncrement05 = document.getElementById('select-increment-05');
+  const cartDecrement05 = document.getElementById('select-decrement-05');
+
+  if (cartBtn01) {
+    cartBtn01.addEventListener('click', () => {
+      cartContainer01.classList.add('border-2', 'border-red-400');
+      cartBtn01.classList.add('bg-primary_1');
+      cartBtn01.classList.add('justify-between');
+      cartBtn01.classList.remove('bg-secondary_50');
+      cartBtn01.classList.remove('justify-center');
+      cartIconSelect01.classList.add('hidden');
+      cartTextSelect01.classList.add('font-semibold', 'text-secondary_50');
+      cartIncrement01.classList.remove('hidden');
+      cartDecrement01.classList.remove('hidden');
+    });
+  }
+
+  if (cartBtn02) {
+    cartBtn02.addEventListener('click', () => {
+      cartContainer02.classList.add('border-2', 'border-red-400');
+      cartBtn02.classList.add('bg-primary_1');
+      cartBtn02.classList.add('justify-between');
+      cartBtn02.classList.remove('bg-secondary_50');
+      cartBtn02.classList.remove('justify-center');
+      cartIconSelect02.classList.add('hidden');
+      cartTextSelect02.classList.add('font-semibold', 'text-secondary_50');
+      cartIncrement02.classList.remove('hidden');
+      cartDecrement02.classList.remove('hidden');
+    });
+  }
+
+  if (cartBtn03) {
+    cartBtn03.addEventListener('click', () => {
+      cartContainer03.classList.add('border-2', 'border-red-400');
+      cartBtn03.classList.add('bg-primary_1');
+      cartBtn03.classList.add('justify-between');
+      cartBtn03.classList.remove('bg-secondary_50');
+      cartBtn03.classList.remove('justify-center');
+      cartIconSelect03.classList.add('hidden');
+      cartTextSelect03.classList.add('font-semibold', 'text-secondary_50');
+      cartIncrement03.classList.remove('hidden');
+      cartDecrement03.classList.remove('hidden');
+    });
+  }
+
+  if (cartBtn04) {
+    cartBtn04.addEventListener('click', () => {
+      cartContainer04.classList.add('border-2', 'border-red-400');
+      cartBtn04.classList.add('bg-primary_1');
+      cartBtn04.classList.add('justify-between');
+      cartBtn04.classList.remove('bg-secondary_50');
+      cartBtn04.classList.remove('justify-center');
+      cartIconSelect04.classList.add('hidden');
+      cartTextSelect04.classList.add('font-semibold', 'text-secondary_50');
+      cartIncrement04.classList.remove('hidden');
+      cartDecrement04.classList.remove('hidden');
+    });
+  }
+
+  if (cartBtn05) {
+    cartBtn05.addEventListener('click', () => {
+      cartContainer05.classList.add('border-2', 'border-red-400');
+      cartBtn05.classList.add('bg-primary_1');
+      cartBtn05.classList.add('justify-between');
+      cartBtn05.classList.remove('bg-secondary_50');
+      cartBtn05.classList.remove('justify-center');
+      cartIconSelect05.classList.add('hidden');
+      cartTextSelect05.classList.add('font-semibold', 'text-secondary_50');
+      cartIncrement05.classList.remove('hidden');
+      cartDecrement05.classList.remove('hidden');
+    });
+  }
 }
+// const cartBtnSelect = document.getElementById('select-button-01');
+// const cartIconSelect = document.getElementById('icon-cart-01');
+// const cartTextSelect = document.getElementById('text-cart-01');
+// const cartContainer = document.querySelector('.cart-container');
+// const cartIncrement = document.getElementById('select-increment-01');
+// const cartDecrement = document.getElementById('select-decrement-01');
+//   cartBtnSelect.addEventListener('click', () => {
+//     cartContainer.classList.add('border-2', 'border-red-400');
+//     cartBtnSelect.classList.add('bg-primary_1');
+//     cartBtnSelect.classList.add('justify-between');
 
-function cartSelected02() {
-  const cartContainer = document.querySelector('.cart-container');
-  const cartBtnSelect2 = document.getElementById('select-button-02');
-  const cartIconSelect2 = document.getElementById('icon-cart-02');
-  const cartTextSelect2 = document.getElementById('text-cart-02');
-  const cartIncrement2 = document.getElementById('select-increment-02');
-  const cartDecrement2 = document.getElementById('select-decrement-02');
+//     cartBtnSelect.classList.remove('bg-secondary_50');
+//     cartBtnSelect.classList.remove('justify-center');
 
-  let productIndex = 1;
+//     cartIconSelect.classList.add('hidden');
+//     cartTextSelect.classList.add('font-semibold', 'text-secondary_50');
 
-  cartBtnSelect2.addEventListener('click', () => {
-    cartContainer.classList.add('border-2', 'border-red-400');
-    cartBtnSelect2.classList.add('bg-primary_1');
-    cartBtnSelect2.classList.add('justify-between');
-    cartBtnSelect2.classList.remove('bg-secondary_50');
-    cartBtnSelect2.classList.remove('justify-center');
-    cartIconSelect2.classList.add('hidden');
-    cartTextSelect2.classList.add('font-semibold', 'text-secondary_50');
-    cartIncrement2.classList.remove('hidden');
-    cartDecrement2.classList.remove('hidden');
+//     cartIncrement.classList.remove('hidden');
+//     cartDecrement.classList.remove('hidden');
+//   });
 
-    // Retrieve updated cart items from localStorage
-    let cartItems = JSON.parse(localStorage.getItem('productsInCart'));
+// let cartQty = JSON.parse(localStorage.getItem('productsInCart'));
 
-    // Check if cartItems exist, and retrieve the product with the correct index (for example, index 1)
-    let productName = products[1].name; // Assuming you want the 2nd product, change this index as needed.
-    if (cartItems && cartItems[productName]) {
-      // Display the current inCart value for this product
-      cartTextSelect2.textContent = cartItems[productName].inCart;
-    } else {
-      // If the product is not in the cart, default to 0
-      cartTextSelect2.textContent = 0;
-    }
-  });
-}
-
-function cartSelected03() {
-  const cartContainer = document.querySelector('.cart-container');
-  const cartBtnSelect3 = document.getElementById('select-button-03');
-  const cartIconSelect3 = document.getElementById('icon-cart-03');
-  const cartTextSelect3 = document.getElementById('text-cart-03');
-  const cartIncrement3 = document.getElementById('select-increment-03');
-  const cartDecrement3 = document.getElementById('select-decrement-03');
-
-  let productIndex = 1;
-
-  cartBtnSelect3.addEventListener('click', () => {
-    cartContainer.classList.add('border-2', 'border-red-400');
-    cartBtnSelect3.classList.add('bg-primary_1');
-    cartBtnSelect3.classList.add('justify-between');
-    cartBtnSelect3.classList.remove('bg-secondary_50');
-    cartBtnSelect3.classList.remove('justify-center');
-    cartIconSelect3.classList.add('hidden');
-    cartTextSelect3.classList.add('font-semibold', 'text-secondary_50');
-    cartIncrement3.classList.remove('hidden');
-    cartDecrement3.classList.remove('hidden');
-
-    // Retrieve updated cart items from localStorage
-    let cartItems = JSON.parse(localStorage.getItem('productsInCart'));
-
-    // Check if cartItems exist, and retrieve the product with the correct index (for example, index 1)
-    let productName = products[1].name; // Assuming you want the 2nd product, change this index as needed.
-    if (cartItems && cartItems[productName]) {
-      // Display the current inCart value for this product
-      cartTextSelect3.textContent = cartItems[productName].inCart;
-    } else {
-      // If the product is not in the cart, default to 0
-      cartTextSelect3.textContent = 0;
-    }
-  });
-}
-
+// if (cartQty) {
+//   Object.values(cartQty).forEach((item) => {
+//     cartTextSelect.textContent = item.inCart;
+//     console.log('cart qty is', item.inCart);
+//   });
+// }
 onLoadCartNumbers();
 displayCart();
 cartSelected();
-cartSelected02();
-cartSelected03();
