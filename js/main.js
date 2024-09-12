@@ -160,6 +160,29 @@ function setItems(products) {
   localStorage.setItem('productsInCart', JSON.stringify(cartItems));
 }
 
+function inCartTotalAdd() {
+  const inCartAdd = document.getElementById('select-increment-01');
+
+  let cartItems = localStorage.getItem('productsInCart');
+  cartItems = JSON.parse(cartItems);
+  if (inCartAdd) {
+    inCartAdd.addEventListener('click', () => {
+      cartItems[products.name].inCart = +1;
+    });
+  }
+}
+
+function inCartTotalMin() {
+  const inCartMin = document.getElementById('select-decrement-01');
+  let cartItems = localStorage.getItem('productsInCart');
+  cartItems = JSON.parse(cartItems);
+  if (inCartMin) {
+    inCartAdd.addEventListener('click', () => {
+      cartItems[products.name].inCart = -1;
+    });
+  }
+}
+
 function totalCost(products) {
   let cartCost = localStorage.getItem('totalCost');
   if (cartCost != null) {
@@ -283,14 +306,6 @@ function cartSelected() {
       cartTextSelect01.classList.add('font-semibold', 'text-secondary_50');
       cartIncrement01.classList.remove('hidden');
       cartDecrement01.classList.remove('hidden');
-
-      let cartQty01 = JSON.parse(localStorage.getItem('productsInCart'));
-      if (cartQty01) {
-        Object.values(cartQty01).forEach((item01) => {
-          cartTextSelect01.textContent = item01.inCart;
-          console.log('cart qty is 01', item01.inCart);
-        });
-      }
     });
   }
 
@@ -303,14 +318,6 @@ function cartSelected() {
       cartTextSelect02.classList.add('font-semibold', 'text-secondary_50');
       cartIncrement02.classList.remove('hidden');
       cartDecrement02.classList.remove('hidden');
-
-      let cartQty02 = JSON.parse(localStorage.getItem('productsInCart'));
-      if (cartQty02) {
-        Object.values(cartQty02).forEach((item02) => {
-          cartTextSelect02.textContent = item02.inCart;
-          console.log('cart qty is 02', item02.inCart);
-        });
-      }
     });
   }
 
@@ -376,6 +383,7 @@ function cartSelected() {
 
   if (cartBtn08) {
     cartBtn08.addEventListener('click', () => {
+      cartContainer08.classList.add('border-2', 'border-red-400');
       cartBtn08.classList.add('bg-primary_1', 'justify-between');
       cartBtn08.classList.remove('bg-secondary_50', 'justify-center');
       cartIconSelect08.classList.add('hidden');
