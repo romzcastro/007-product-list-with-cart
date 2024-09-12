@@ -240,6 +240,13 @@ function cartSelected() {
   const cartIncrement04 = document.getElementById('select-increment-04');
   const cartDecrement04 = document.getElementById('select-decrement-04');
 
+  const cartBtn06 = document.getElementById('cart-btn06');
+  const cartContainer06 = document.getElementById('cart-container06');
+  const cartIconSelect06 = document.getElementById('icon-cart-06');
+  const cartTextSelect06 = document.getElementById('text-cart-06');
+  const cartIncrement06 = document.getElementById('select-increment-06');
+  const cartDecrement06 = document.getElementById('select-decrement-06');
+
   const cartBtn05 = document.getElementById('cart-btn05');
   const cartContainer05 = document.getElementById('cart-container05');
   const cartIconSelect05 = document.getElementById('icon-cart-05');
@@ -247,27 +254,52 @@ function cartSelected() {
   const cartIncrement05 = document.getElementById('select-increment-05');
   const cartDecrement05 = document.getElementById('select-decrement-05');
 
+  const cartBtn07 = document.getElementById('cart-btn07');
+  const cartContainer07 = document.getElementById('cart-container07');
+  const cartIconSelect07 = document.getElementById('icon-cart-07');
+  const cartTextSelect07 = document.getElementById('text-cart-07');
+  const cartIncrement07 = document.getElementById('select-increment-07');
+  const cartDecrement07 = document.getElementById('select-decrement-07');
+
+  const cartBtn08 = document.getElementById('cart-btn08');
+  const cartContainer08 = document.getElementById('cart-container08');
+  const cartIconSelect08 = document.getElementById('icon-cart-08');
+  const cartTextSelect08 = document.getElementById('text-cart-08');
+  const cartIncrement08 = document.getElementById('select-increment-08');
+  const cartDecrement08 = document.getElementById('select-decrement-08');
+
+  const cartBtn09 = document.getElementById('cart-btn09');
+  const cartContainer09 = document.getElementById('cart-container09');
+  const cartIconSelect09 = document.getElementById('icon-cart-09');
+  const cartTextSelect09 = document.getElementById('text-cart-09');
+  const cartIncrement09 = document.getElementById('select-increment-09');
+  const cartDecrement09 = document.getElementById('select-decrement-09');
   if (cartBtn01) {
     cartBtn01.addEventListener('click', () => {
       cartContainer01.classList.add('border-2', 'border-red-400');
-      cartBtn01.classList.add('bg-primary_1');
-      cartBtn01.classList.add('justify-between');
-      cartBtn01.classList.remove('bg-secondary_50');
-      cartBtn01.classList.remove('justify-center');
+      cartBtn01.classList.add('bg-primary_1', 'justify-between');
+      cartBtn01.classList.remove('bg-secondary_50', 'justify-center');
       cartIconSelect01.classList.add('hidden');
       cartTextSelect01.classList.add('font-semibold', 'text-secondary_50');
       cartIncrement01.classList.remove('hidden');
       cartDecrement01.classList.remove('hidden');
+
+      let cartQty = JSON.parse(localStorage.getItem('productsInCart'));
+
+      if (cartQty) {
+        Object.values(cartQty).forEach((item) => {
+          cartTextSelect.textContent = item.inCart;
+          console.log('cart qty is', item.inCart);
+        });
+      }
     });
   }
 
   if (cartBtn02) {
     cartBtn02.addEventListener('click', () => {
       cartContainer02.classList.add('border-2', 'border-red-400');
-      cartBtn02.classList.add('bg-primary_1');
-      cartBtn02.classList.add('justify-between');
-      cartBtn02.classList.remove('bg-secondary_50');
-      cartBtn02.classList.remove('justify-center');
+      cartBtn02.classList.add('bg-primary_1', 'justify-between');
+      cartBtn02.classList.remove('bg-secondary_50', 'justify-center');
       cartIconSelect02.classList.add('hidden');
       cartTextSelect02.classList.add('font-semibold', 'text-secondary_50');
       cartIncrement02.classList.remove('hidden');
@@ -278,10 +310,8 @@ function cartSelected() {
   if (cartBtn03) {
     cartBtn03.addEventListener('click', () => {
       cartContainer03.classList.add('border-2', 'border-red-400');
-      cartBtn03.classList.add('bg-primary_1');
-      cartBtn03.classList.add('justify-between');
-      cartBtn03.classList.remove('bg-secondary_50');
-      cartBtn03.classList.remove('justify-center');
+      cartBtn03.classList.add('bg-primary_1', 'justify-between');
+      cartBtn03.classList.remove('bg-secondary_50', 'justify-center');
       cartIconSelect03.classList.add('hidden');
       cartTextSelect03.classList.add('font-semibold', 'text-secondary_50');
       cartIncrement03.classList.remove('hidden');
@@ -292,10 +322,8 @@ function cartSelected() {
   if (cartBtn04) {
     cartBtn04.addEventListener('click', () => {
       cartContainer04.classList.add('border-2', 'border-red-400');
-      cartBtn04.classList.add('bg-primary_1');
-      cartBtn04.classList.add('justify-between');
-      cartBtn04.classList.remove('bg-secondary_50');
-      cartBtn04.classList.remove('justify-center');
+      cartBtn04.classList.add('bg-primary_1', 'justify-between');
+      cartBtn04.classList.remove('bg-secondary_50', 'justify-center');
       cartIconSelect04.classList.add('hidden');
       cartTextSelect04.classList.add('font-semibold', 'text-secondary_50');
       cartIncrement04.classList.remove('hidden');
@@ -306,46 +334,63 @@ function cartSelected() {
   if (cartBtn05) {
     cartBtn05.addEventListener('click', () => {
       cartContainer05.classList.add('border-2', 'border-red-400');
-      cartBtn05.classList.add('bg-primary_1');
-      cartBtn05.classList.add('justify-between');
-      cartBtn05.classList.remove('bg-secondary_50');
-      cartBtn05.classList.remove('justify-center');
+      cartBtn05.classList.add('bg-primary_1', 'justify-between');
+      cartBtn05.classList.remove('bg-secondary_50', 'justify-center');
       cartIconSelect05.classList.add('hidden');
       cartTextSelect05.classList.add('font-semibold', 'text-secondary_50');
       cartIncrement05.classList.remove('hidden');
       cartDecrement05.classList.remove('hidden');
     });
   }
+
+  if (cartBtn06) {
+    cartBtn06.addEventListener('click', () => {
+      cartContainer06.classList.add('border-2', 'border-red-400');
+      cartBtn06.classList.add('bg-primary_1', 'justify-between');
+      cartBtn06.classList.remove('bg-secondary_50', 'justify-center');
+      cartIconSelect06.classList.add('hidden');
+      cartTextSelect06.classList.add('font-semibold', 'text-secondary_50');
+      cartIncrement06.classList.remove('hidden');
+      cartDecrement06.classList.remove('hidden');
+    });
+  }
+
+  if (cartBtn07) {
+    cartBtn07.addEventListener('click', () => {
+      cartContainer07.classList.add('border-2', 'border-red-400');
+      cartBtn07.classList.add('bg-primary_1', 'justify-between');
+      cartBtn07.classList.remove('bg-secondary_50', 'justify-center');
+      cartIconSelect07.classList.add('hidden');
+      cartTextSelect07.classList.add('font-semibold', 'text-secondary_50');
+      cartIncrement07.classList.remove('hidden');
+      cartDecrement07.classList.remove('hidden');
+    });
+  }
+
+  if (cartBtn08) {
+    cartBtn08.addEventListener('click', () => {
+      cartBtn08.classList.add('bg-primary_1', 'justify-between');
+      cartBtn08.classList.remove('bg-secondary_50', 'justify-center');
+      cartIconSelect08.classList.add('hidden');
+      cartTextSelect08.classList.add('font-semibold', 'text-secondary_50');
+      cartIncrement08.classList.remove('hidden');
+      cartDecrement08.classList.remove('hidden');
+    });
+  }
+
+  if (cartBtn09) {
+    cartBtn09.addEventListener('click', () => {
+      cartContainer09.classList.add('border-2', 'border-red-400');
+      cartBtn09.classList.add('bg-primary_1', 'justify-between');
+      cartBtn09.classList.remove('bg-secondary_50', 'justify-center');
+      cartIconSelect09.classList.add('hidden');
+      cartTextSelect09.classList.add('font-semibold', 'text-secondary_50');
+      cartIncrement09.classList.remove('hidden');
+      cartDecrement09.classList.remove('hidden');
+    });
+  }
 }
-// const cartBtnSelect = document.getElementById('select-button-01');
-// const cartIconSelect = document.getElementById('icon-cart-01');
-// const cartTextSelect = document.getElementById('text-cart-01');
-// const cartContainer = document.querySelector('.cart-container');
-// const cartIncrement = document.getElementById('select-increment-01');
-// const cartDecrement = document.getElementById('select-decrement-01');
-//   cartBtnSelect.addEventListener('click', () => {
-//     cartContainer.classList.add('border-2', 'border-red-400');
-//     cartBtnSelect.classList.add('bg-primary_1');
-//     cartBtnSelect.classList.add('justify-between');
 
-//     cartBtnSelect.classList.remove('bg-secondary_50');
-//     cartBtnSelect.classList.remove('justify-center');
-
-//     cartIconSelect.classList.add('hidden');
-//     cartTextSelect.classList.add('font-semibold', 'text-secondary_50');
-
-//     cartIncrement.classList.remove('hidden');
-//     cartDecrement.classList.remove('hidden');
-//   });
-
-// let cartQty = JSON.parse(localStorage.getItem('productsInCart'));
-
-// if (cartQty) {
-//   Object.values(cartQty).forEach((item) => {
-//     cartTextSelect.textContent = item.inCart;
-//     console.log('cart qty is', item.inCart);
-//   });
-// }
 onLoadCartNumbers();
 displayCart();
 cartSelected();
