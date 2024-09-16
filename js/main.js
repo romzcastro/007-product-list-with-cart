@@ -110,13 +110,6 @@ let products = [
   ,
 ];
 
-// let carts = document.querySelectorAll('.cart-btn');
-// for (let i = 0; i < carts.length; i++) {
-//   carts[i].addEventListener('click', () => {
-//     event.preventDefault();
-//   });
-// }
-
 function onLoadCartNumbers() {
   let productNumbers = localStorage.getItem('cartNumbers');
   if (productNumbers) {
@@ -137,17 +130,15 @@ function cartNumbers(products) {
   setItems(products);
 }
 
-function minCartNumbers(products) {
-  let productNumbers = localStorage.getItem('cartNumbers');
-  productNumbers = parseInt(productNumbers);
-  if (productNumbers) {
-    localStorage.setItem('cartNumbers', productNumbers - 1);
-    document.querySelector('.cart span').textContent = productNumbers - 1;
-  } else {
-    localStorage.setItem('cartNumbers', 1);
-    document.querySelector('.cart span').textContent = 1;
-  }
-  setItems(products);
+function loadCartQty() {
+  // const cartTextSelect01 = document.getElementById('text-cart-01');
+  let cartProducts = localStorage.getItem('productsInCart');
+  cartProducts = JSON.parse(cartProducts);
+
+  let cartQty = cartProducts.inCart;
+  console.log(cartQty, cartProducts); // This will log the value of 'inCart'
+
+  // document.getElementById('text-cart-01').textContent = cartQty;
 }
 
 function setItems(products) {
@@ -189,15 +180,6 @@ function totalCost(products) {
   if (cartCost != null) {
     cartCost = parseFloat(cartCost);
     localStorage.setItem('totalCost', cartCost + products.price);
-  } else {
-    localStorage.setItem('totalCost', products.price);
-  }
-}
-function minTotalCost(products) {
-  let cartCost = localStorage.getItem('totalCost');
-  if (cartCost != null) {
-    cartCost = parseFloat(cartCost);
-    localStorage.setItem('totalCost', cartCost - products.price);
   } else {
     localStorage.setItem('totalCost', products.price);
   }
@@ -315,8 +297,10 @@ function cartSelected() {
       cartBtn01.classList.remove('bg-secondary_50', 'justify-center');
       cartIconSelect01.classList.add('hidden');
       cartTextSelect01.classList.add('font-semibold', 'text-secondary_50');
+      cartTextSelect01.textContent = '';
       cartIncrement01.classList.remove('hidden');
       cartDecrement01.classList.remove('hidden');
+      event.preventDefault();
     });
   }
 
@@ -327,8 +311,10 @@ function cartSelected() {
       cartBtn02.classList.remove('bg-secondary_50', 'justify-center');
       cartIconSelect02.classList.add('hidden');
       cartTextSelect02.classList.add('font-semibold', 'text-secondary_50');
+      cartTextSelect02.textContent = '';
       cartIncrement02.classList.remove('hidden');
       cartDecrement02.classList.remove('hidden');
+      event.preventDefault();
     });
   }
 
@@ -339,8 +325,10 @@ function cartSelected() {
       cartBtn03.classList.remove('bg-secondary_50', 'justify-center');
       cartIconSelect03.classList.add('hidden');
       cartTextSelect03.classList.add('font-semibold', 'text-secondary_50');
+      cartTextSelect03.textContent = '';
       cartIncrement03.classList.remove('hidden');
       cartDecrement03.classList.remove('hidden');
+      event.preventDefault();
     });
   }
 
@@ -351,8 +339,10 @@ function cartSelected() {
       cartBtn04.classList.remove('bg-secondary_50', 'justify-center');
       cartIconSelect04.classList.add('hidden');
       cartTextSelect04.classList.add('font-semibold', 'text-secondary_50');
+      cartTextSelect04.textContent = '';
       cartIncrement04.classList.remove('hidden');
       cartDecrement04.classList.remove('hidden');
+      event.preventDefault();
     });
   }
 
@@ -363,8 +353,10 @@ function cartSelected() {
       cartBtn05.classList.remove('bg-secondary_50', 'justify-center');
       cartIconSelect05.classList.add('hidden');
       cartTextSelect05.classList.add('font-semibold', 'text-secondary_50');
+      cartTextSelect05.textContent = '';
       cartIncrement05.classList.remove('hidden');
       cartDecrement05.classList.remove('hidden');
+      event.preventDefault();
     });
   }
 
@@ -375,8 +367,10 @@ function cartSelected() {
       cartBtn06.classList.remove('bg-secondary_50', 'justify-center');
       cartIconSelect06.classList.add('hidden');
       cartTextSelect06.classList.add('font-semibold', 'text-secondary_50');
+      cartTextSelect06.textContent = '';
       cartIncrement06.classList.remove('hidden');
       cartDecrement06.classList.remove('hidden');
+      event.preventDefault();
     });
   }
 
@@ -387,8 +381,10 @@ function cartSelected() {
       cartBtn07.classList.remove('bg-secondary_50', 'justify-center');
       cartIconSelect07.classList.add('hidden');
       cartTextSelect07.classList.add('font-semibold', 'text-secondary_50');
+      cartTextSelect07.textContent = '';
       cartIncrement07.classList.remove('hidden');
       cartDecrement07.classList.remove('hidden');
+      event.preventDefault();
     });
   }
 
@@ -399,8 +395,10 @@ function cartSelected() {
       cartBtn08.classList.remove('bg-secondary_50', 'justify-center');
       cartIconSelect08.classList.add('hidden');
       cartTextSelect08.classList.add('font-semibold', 'text-secondary_50');
+      cartTextSelect08.textContent = '';
       cartIncrement08.classList.remove('hidden');
       cartDecrement08.classList.remove('hidden');
+      event.preventDefault();
     });
   }
 
@@ -411,8 +409,10 @@ function cartSelected() {
       cartBtn09.classList.remove('bg-secondary_50', 'justify-center');
       cartIconSelect09.classList.add('hidden');
       cartTextSelect09.classList.add('font-semibold', 'text-secondary_50');
+      cartTextSelect09.textContent = '';
       cartIncrement09.classList.remove('hidden');
       cartDecrement09.classList.remove('hidden');
+      event.preventDefault();
     });
   }
 }
