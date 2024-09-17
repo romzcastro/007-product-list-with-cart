@@ -123,22 +123,13 @@ function cartNumbers(products) {
   if (productNumbers) {
     localStorage.setItem('cartNumbers', productNumbers + 1);
     document.querySelector('.cart span').textContent = productNumbers + 1;
+    document.getElementById('text-cart-01').textContent = productNumbers;
   } else {
     localStorage.setItem('cartNumbers', 1);
     document.querySelector('.cart span').textContent = 1;
+    document.getElementById('text-cart-01').textContent = 0;
   }
   setItems(products);
-}
-
-function loadCartQty() {
-  // const cartTextSelect01 = document.getElementById('text-cart-01');
-  let cartProducts = localStorage.getItem('productsInCart');
-  cartProducts = JSON.parse(cartProducts);
-
-  let cartQty = cartProducts.inCart;
-  console.log(cartQty, cartProducts); // This will log the value of 'inCart'
-
-  // document.getElementById('text-cart-01').textContent = cartQty;
 }
 
 function setItems(products) {
@@ -183,6 +174,26 @@ function totalCost(products) {
   } else {
     localStorage.setItem('totalCost', products.price);
   }
+}
+
+function loadCartQty() {
+  // Get the cart data from localStorage
+  // let cartProducts = localStorage.getItem('productsInCart');
+  // // Check if there's any cart data
+  // if (cartProducts) {
+  //   cartProducts = JSON.parse(cartProducts);
+  //   // Check if the 'inCart' property exists
+  //   if (cartProducts && cartProducts.inCart !== undefined) {
+  //     let cartQty = cartProducts.inCart;
+  //     console.log(cartQty, cartProducts); // Logs the cart quantity and object
+  //   } else {
+  //     console.log('Cart data exists but no "inCart" property found.');
+  //   }
+  // } else {
+  //   console.log('No cart data found in localStorage.');
+  // }
+  // Uncomment if needed
+  // document.getElementById('text-cart-01').textContent = cartQty;
 }
 
 function displayCart() {
@@ -300,6 +311,7 @@ function cartSelected() {
       cartTextSelect01.textContent = '';
       cartIncrement01.classList.remove('hidden');
       cartDecrement01.classList.remove('hidden');
+
       event.preventDefault();
     });
   }

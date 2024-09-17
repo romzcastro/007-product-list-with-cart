@@ -641,20 +641,12 @@ html {
   height: 16rem;
 }
 
-.h-\[52px\]{
-  height: 52px;
-}
-
 .min-h-screen{
   min-height: 100vh;
 }
 
 .w-1\/2{
   width: 50%;
-}
-
-.w-\[159\.86px\]{
-  width: 159.86px;
 }
 
 .w-full{
@@ -687,10 +679,6 @@ html {
 
 .justify-between{
   justify-content: space-between;
-}
-
-.gap-2{
-  gap: 0.5rem;
 }
 
 .gap-3{
