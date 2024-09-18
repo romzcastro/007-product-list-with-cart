@@ -760,6 +760,10 @@ html {
   padding: 0.25rem;
 }
 
+.p-2{
+  padding: 0.5rem;
+}
+
 .p-3{
   padding: 0.75rem;
 }
@@ -917,8 +921,16 @@ html {
     max-width: 80rem;
   }
 
-  .md\:flex-1{
-    flex: 1 1 0%;
+  .md\:flex-\[0_0_33\.3333\%\]{
+    flex: 0 0 33.3333%;
+  }
+
+  .md\:flex-\[0_0_50\%\%\]{
+    flex: 0 0 50%%;
+  }
+
+  .md\:flex-\[0_0_50\%\]{
+    flex: 0 0 50%;
   }
 
   .md\:flex-row{
@@ -929,8 +941,8 @@ html {
     flex-direction: column;
   }
 
-  .md\:gap-4{
-    gap: 1rem;
+  .md\:flex-wrap{
+    flex-wrap: wrap;
   }
 
   .md\:pb-0{
