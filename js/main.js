@@ -173,6 +173,26 @@ function totalCost(products) {
   }
 }
 
+function displayCartQty() {
+  // Get cart items from localStorage
+  let cartItems = localStorage.getItem('productsInCart');
+  cartItems = JSON.parse(cartItems);
+
+  if (cartItems) {
+    // Loop over the cart items to update the corresponding text-cart elements
+    Object.keys(cartItems).forEach((productName, index) => {
+      // Dynamically find the text-cart ID for each product
+      const cartTextId = `text-cart-0${index + 1}`;
+      const cartTextElement = document.getElementById('text-cart-01');
+
+      // If the element exists, update its content with the inCart value
+      if (cartTextElement && cartItems[productName].inCart) {
+        cartTextElement.textContent = cartItems[productName].inCart;
+      }
+    });
+  }
+}
+
 function displayCart() {
   let cartItems = localStorage.getItem('productsInCart');
   cartItems = JSON.parse(cartItems);
@@ -298,21 +318,157 @@ function cartSelected() {
     const cartIncrement = document.getElementById(item.increment);
     const cartDecrement = document.getElementById(item.decrement);
 
+    // Restore saved state from localStorage
+    const savedState = localStorage.getItem(item.btn);
+    if (savedState === 'selected') {
+      applySelectedState(
+        cartBtn,
+        cartContainer,
+        cartIcon,
+        cartText,
+        cartIncrement,
+        cartDecrement
+      );
+    }
+
     if (cartBtn) {
       cartBtn.addEventListener('click', () => {
-        cartContainer.classList.add('border-2', 'border-red-400');
-        cartBtn.classList.add('bg-primary_1', 'justify-between');
-        cartBtn.classList.remove('bg-secondary_50', 'justify-center');
-        cartIcon.classList.add('hidden');
-        cartText.classList.add('font-semibold', 'text-secondary_50');
-        cartText.textContent = '';
-        cartIncrement.classList.remove('hidden');
-        cartDecrement.classList.remove('hidden');
+        applySelectedState(
+          cartBtn,
+          cartContainer,
+          cartIcon,
+          cartText,
+          cartIncrement,
+          cartDecrement
+        );
+
+        // Save state to localStorage
+        localStorage.setItem(item.btn, 'selected');
+
         event.preventDefault();
       });
     }
   });
 }
+
+// Function to apply the selected state to elements
+function applySelectedState(
+  cartBtn,
+  cartContainer,
+  cartIcon,
+  cartText,
+  cartIncrement,
+  cartDecrement
+) {
+  cartContainer.classList.add('border-2', 'border-red-400');
+  cartBtn.classList.add('bg-primary_1', 'justify-between');
+  cartBtn.classList.remove('bg-secondary_50', 'justify-center');
+  cartIcon.classList.add('hidden');
+  cartText.classList.add('font-semibold', 'text-secondary_50');
+  cartText.textContent = '';
+  cartIncrement.classList.remove('hidden');
+  cartDecrement.classList.remove('hidden');
+}
+
+// function cartSelected() {
+//   const cartItems = [
+//     {
+//       btn: 'cart-btn01',
+//       container: 'cart-container01',
+//       icon: 'icon-cart-01',
+//       text: 'text-cart-01',
+//       increment: 'select-increment-01',
+//       decrement: 'select-decrement-01',
+//     },
+//     {
+//       btn: 'cart-btn02',
+//       container: 'cart-container02',
+//       icon: 'icon-cart-02',
+//       text: 'text-cart-02',
+//       increment: 'select-increment-02',
+//       decrement: 'select-decrement-02',
+//     },
+//     {
+//       btn: 'cart-btn03',
+//       container: 'cart-container03',
+//       icon: 'icon-cart-03',
+//       text: 'text-cart-03',
+//       increment: 'select-increment-03',
+//       decrement: 'select-decrement-03',
+//     },
+//     {
+//       btn: 'cart-btn04',
+//       container: 'cart-container04',
+//       icon: 'icon-cart-04',
+//       text: 'text-cart-04',
+//       increment: 'select-increment-04',
+//       decrement: 'select-decrement-04',
+//     },
+//     {
+//       btn: 'cart-btn05',
+//       container: 'cart-container05',
+//       icon: 'icon-cart-05',
+//       text: 'text-cart-05',
+//       increment: 'select-increment-05',
+//       decrement: 'select-decrement-05',
+//     },
+//     {
+//       btn: 'cart-btn06',
+//       container: 'cart-container06',
+//       icon: 'icon-cart-06',
+//       text: 'text-cart-06',
+//       increment: 'select-increment-06',
+//       decrement: 'select-decrement-06',
+//     },
+//     {
+//       btn: 'cart-btn07',
+//       container: 'cart-container07',
+//       icon: 'icon-cart-07',
+//       text: 'text-cart-07',
+//       increment: 'select-increment-07',
+//       decrement: 'select-decrement-07',
+//     },
+//     {
+//       btn: 'cart-btn08',
+//       container: 'cart-container08',
+//       icon: 'icon-cart-08',
+//       text: 'text-cart-08',
+//       increment: 'select-increment-08',
+//       decrement: 'select-decrement-08',
+//     },
+//     {
+//       btn: 'cart-btn09',
+//       container: 'cart-container09',
+//       icon: 'icon-cart-09',
+//       text: 'text-cart-09',
+//       increment: 'select-increment-09',
+//       decrement: 'select-decrement-09',
+//     },
+//   ];
+
+//   cartItems.forEach((item) => {
+//     const cartBtn = document.getElementById(item.btn);
+//     const cartContainer = document.getElementById(item.container);
+//     const cartIcon = document.getElementById(item.icon);
+//     const cartText = document.getElementById(item.text);
+//     const cartIncrement = document.getElementById(item.increment);
+//     const cartDecrement = document.getElementById(item.decrement);
+
+//     if (cartBtn) {
+//       cartBtn.addEventListener('click', () => {
+//         cartContainer.classList.add('border-2', 'border-red-400');
+//         cartBtn.classList.add('bg-primary_1', 'justify-between');
+//         cartBtn.classList.remove('bg-secondary_50', 'justify-center');
+//         cartIcon.classList.add('hidden');
+//         cartText.classList.add('font-semibold', 'text-secondary_50');
+//         cartText.textContent = '';
+//         cartIncrement.classList.remove('hidden');
+//         cartDecrement.classList.remove('hidden');
+//         event.preventDefault();
+//       });
+//     }
+//   });
+// }
 
 // function cartSelected() {
 //   const cartBtn01 = document.getElementById('cart-btn01');
