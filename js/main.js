@@ -142,6 +142,11 @@ function setItems(products) {
         [products.name]: products,
       };
     }
+
+    if (!cartItems[products.name].inCart) {
+      cartItems[products.name].inCart = 0;
+    }
+
     cartItems[products.name].inCart += 1;
   } else {
     products.inCart = 1;
