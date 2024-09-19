@@ -925,14 +925,6 @@ html {
     flex: 0 0 33.3333%;
   }
 
-  .md\:flex-\[0_0_50\%\%\]{
-    flex: 0 0 50%%;
-  }
-
-  .md\:flex-\[0_0_50\%\]{
-    flex: 0 0 50%;
-  }
-
   .md\:flex-row{
     flex-direction: row;
   }
