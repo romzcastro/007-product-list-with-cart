@@ -921,10 +921,6 @@ html {
     max-width: 80rem;
   }
 
-  .md\:flex-1{
-    flex: 1 1 0%;
-  }
-
   .md\:flex-\[0_0_33\.3333\%\]{
     flex: 0 0 33.3333%;
   }
@@ -939,10 +935,6 @@ html {
 
   .md\:flex-wrap{
     flex-wrap: wrap;
-  }
-
-  .md\:gap-4{
-    gap: 1rem;
   }
 
   .md\:pb-0{

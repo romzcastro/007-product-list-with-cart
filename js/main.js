@@ -10,6 +10,7 @@ let products = [
     name: 'Waffle with Berries',
     category: 'Waffle',
     price: 6.5,
+    inCart: 0,
   },
   {
     image: {
@@ -21,6 +22,7 @@ let products = [
     name: 'Vanilla Bean Crème Brûlée',
     category: 'Crème Brûlée',
     price: 7.0,
+    inCart: 0,
   },
   {
     image: {
@@ -32,6 +34,7 @@ let products = [
     name: 'Macaron Mix of Five',
     category: 'Macaron',
     price: 8.0,
+    inCart: 0,
   },
   {
     image: {
@@ -43,6 +46,7 @@ let products = [
     name: 'Classic Tiramisu',
     category: 'Tiramisu',
     price: 5.5,
+    inCart: 0,
   },
   {
     image: {
@@ -54,6 +58,7 @@ let products = [
     name: 'Pistachio Baklava',
     category: 'Baklava',
     price: 4.0,
+    inCart: 0,
   },
   {
     image: {
@@ -65,6 +70,7 @@ let products = [
     name: 'Lemon Meringue Pie',
     category: 'Pie',
     price: 5.0,
+    inCart: 0,
   },
   {
     image: {
@@ -76,6 +82,7 @@ let products = [
     name: 'Red Velvet Cake',
     category: 'Cake',
     price: 4.5,
+    inCart: 0,
   },
   {
     image: {
@@ -87,6 +94,7 @@ let products = [
     name: 'Salted Caramel Brownie',
     category: 'Brownie',
     price: 4.5,
+    inCart: 0,
   },
   {
     image: {
@@ -98,6 +106,7 @@ let products = [
     name: 'Vanilla Panna Cotta',
     category: 'Panna Cotta',
     price: 6.5,
+    inCart: 0,
   },
 ];
 
@@ -109,9 +118,6 @@ function onLoadCartNumbers() {
 }
 
 function onLoadCartQty() {
-  let cartItems = localStorage.getItem('productsInCart');
-  cartItems = JSON.parse(cartItems);
-
   let incrementItems = [
     { increment: 'select-increment-01', text: 'text-cart-01' },
     { increment: 'select-increment-02', text: 'text-cart-02' },
@@ -124,27 +130,30 @@ function onLoadCartQty() {
     { increment: 'select-increment-09', text: 'text-cart-09' },
   ];
 
-  let selectbtnInc = document.querySelectorAll('.cart-btn-increment');
+  incrementItems.forEach((item, index) => {
+    const selectbtnInc = document.getElementById(item.increment);
+    const selectText = document.getElementById(item.text);
 
-  incrementItems.forEach((select, index) => {
-    const btnText = document.getElementById(select.text);
+    if (selectbtnInc) {
+      selectbtnInc.addEventListener('click', () => {
+        let cartItems = localStorage.getItem('productsInCart');
+        cartItems = JSON.parse(cartItems);
 
-    // Attach the event listener to each increment button
-    selectbtnInc.forEach((btn, idx) => {
-      // Ensure the button corresponds to the right increment item
-      if (index === idx) {
-        btn.addEventListener('click', () => {
-          if (cartItems) {
-            // Assuming cartItems is an object with the inCart property
-            let cartItem = Object.values(cartItems)[index]; // Get the item at the current index
-            if (cartItem) {
-              let cartQty = cartItem.inCart; // Get the inCart value
-              btnText.textContent = cartQty; // Update the text content
-            }
+        if (cartItems) {
+          const product = cartItems[products[index].name];
+
+          if (product && selectText) {
+            // console.log(
+            //   `You have ${product.inCart} pc(s) of ${product.name} in your cart.`
+            // );
+
+            selectText.textContent = product.inCart; // Update displayed quantity
+          } else {
+            console.log('you failed again');
           }
-        });
-      }
-    });
+        }
+      });
+    }
   });
 }
 
@@ -155,7 +164,6 @@ for (let i = 0; i < cartsIncrement.length; i++) {
     cartNumbers(products[i]);
     totalCost(products[i]);
     displayCart();
-    onLoadCartQty();
   });
 }
 
@@ -166,11 +174,9 @@ function cartNumbers(products) {
     localStorage.setItem('cartNumbers', productNumbers + 1);
 
     document.querySelector('.cart span').textContent = productNumbers + 1;
-    document.getElementById('text-cart-01').textContent = productNumbers;
   } else {
     localStorage.setItem('cartNumbers', 1);
     document.querySelector('.cart span').textContent = 1;
-    document.getElementById('text-cart-01').textContent = 0;
   }
   setItems(products);
 }
@@ -342,7 +348,7 @@ function cartSelected() {
         cartBtn.classList.remove('bg-secondary_50', 'justify-center');
         cartIcon.classList.add('hidden');
         cartText.classList.add('font-semibold', 'text-secondary_50');
-        cartText.textContent = '';
+        cartText.textContent = 0;
         cartIncrement.classList.remove('hidden');
         cartDecrement.classList.remove('hidden');
         event.preventDefault();
@@ -353,3 +359,4 @@ function cartSelected() {
 
 cartSelected();
 onLoadCartNumbers();
+onLoadCartQty();
