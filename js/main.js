@@ -117,6 +117,26 @@ function onLoadCartNumbers() {
   }
 }
 
+// function onLoadQty() {
+//   let cartItems = localStorage.getItem('productsInCart');
+//   if (cartItems) {
+//     cartItems = JSON.parse(cartItems);
+
+//     // Loop through products to display their inCart values
+//     products.forEach((product, index) => {
+//       const productName = product.name;
+//       const cartProduct = cartItems[productName];
+
+//       if (cartProduct) {
+//         const selectText = document.getElementById(`text-cart-0${index + 1}`);
+//         if (selectText) {
+//           selectText.textContent = `${cartProduct.inCart}`; // Update displayed quantity
+//         }
+//       }
+//     });
+//   }
+// }
+
 function onLoadCartQty() {
   let incrementItems = [
     { increment: 'select-increment-01', text: 'text-cart-01' },
@@ -130,32 +150,74 @@ function onLoadCartQty() {
     { increment: 'select-increment-09', text: 'text-cart-09' },
   ];
 
-  incrementItems.forEach((item, index) => {
+  incrementItems.forEach((item) => {
     const selectbtnInc = document.getElementById(item.increment);
     const selectText = document.getElementById(item.text);
 
-    if (selectbtnInc) {
-      selectbtnInc.addEventListener('click', () => {
-        let cartItems = localStorage.getItem('productsInCart');
+    if (selectbtnInc && selectText) {
+      let cartItems = localStorage.getItem('productsInCart');
+      if (cartItems) {
         cartItems = JSON.parse(cartItems);
 
-        if (cartItems) {
-          const product = cartItems[products[index].name];
+        // Loop through products to display their inCart values
+        products.forEach((product, index) => {
+          const productName = product.name;
+          const cartProduct = cartItems[productName];
 
-          if (product && selectText) {
-            // console.log(
-            //   `You have ${product.inCart} pc(s) of ${product.name} in your cart.`
-            // );
-
-            selectText.textContent = product.inCart; // Update displayed quantity
-          } else {
-            console.log('you failed again');
+          if (cartProduct) {
+            const selectText = document.getElementById(
+              `text-cart-0${index + 1}`
+            );
+            if (selectText) {
+              selectText.textContent = `${cartProduct.inCart}`; // Update displayed quantity
+            }
           }
-        }
-      });
+        });
+      }
     }
   });
 }
+
+// function onLoadCartQty() {
+//   let incrementItems = [
+//     { increment: 'select-increment-01', text: 'text-cart-01' },
+//     { increment: 'select-increment-02', text: 'text-cart-02' },
+//     { increment: 'select-increment-03', text: 'text-cart-03' },
+//     { increment: 'select-increment-04', text: 'text-cart-04' },
+//     { increment: 'select-increment-05', text: 'text-cart-05' },
+//     { increment: 'select-increment-06', text: 'text-cart-06' },
+//     { increment: 'select-increment-07', text: 'text-cart-07' },
+//     { increment: 'select-increment-08', text: 'text-cart-08' },
+//     { increment: 'select-increment-09', text: 'text-cart-09' },
+//   ];
+
+//   incrementItems.forEach((item, index) => {
+//     const selectbtnInc = document.getElementById(item.increment);
+//     const selectText = document.getElementById(item.text);
+
+//     if (selectbtnInc) {
+//       selectbtnInc.addEventListener('click', () => {
+//         let cartItems = localStorage.getItem('productsInCart');
+//         cartItems = JSON.parse(cartItems);
+
+//         if (cartItems) {
+//           const product = cartItems[products[index].name];
+
+//           let cartItems = localStorage.getItem('productsInCart');
+//           if (cartItems) {
+//             cartItems = JSON.parse(cartItems);
+//             const productName = products[index].name;
+//             const product = cartItems[productName];
+//             if (product) {
+//               selectText.textContent = `${product.inCart}`; // Update displayed quantity
+//             }
+//           } else {
+//           }
+//         }
+//       });
+//     }
+//   });
+// }
 
 let cartsIncrement = document.querySelectorAll('.cart-btn-increment');
 
@@ -359,4 +421,5 @@ function cartSelected() {
 
 cartSelected();
 onLoadCartNumbers();
+// onLoadQty();
 onLoadCartQty();
