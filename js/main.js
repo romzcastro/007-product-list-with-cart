@@ -421,5 +421,5 @@ function cartSelected() {
 
 cartSelected();
 onLoadCartNumbers();
-// onLoadQty();
+onLoadQty();
 onLoadCartQty();
