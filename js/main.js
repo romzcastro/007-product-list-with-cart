@@ -116,26 +116,34 @@ function onLoadCartNumbers() {
     document.querySelector('.cart span').textContent = productNumbers;
   }
 }
-
-// function onLoadQty() {
-//   let cartItems = localStorage.getItem('productsInCart');
-//   if (cartItems) {
-//     cartItems = JSON.parse(cartItems);
-
-//     // Loop through products to display their inCart values
-//     products.forEach((product, index) => {
-//       const productName = product.name;
-//       const cartProduct = cartItems[productName];
-
-//       if (cartProduct) {
-//         const selectText = document.getElementById(`text-cart-0${index + 1}`);
-//         if (selectText) {
-//           selectText.textContent = `${cartProduct.inCart}`; // Update displayed quantity
-//         }
-//       }
-//     });
-//   }
-// }
+function onLoadQty() {
+  // let textItems = [
+  //   { text: 'text-cart-01' },
+  //   { text: 'text-cart-02' },
+  //   { text: 'text-cart-03' },
+  //   { text: 'text-cart-04' },
+  //   { text: 'text-cart-05' },
+  //   { text: 'text-cart-06' },
+  //   { text: 'text-cart-07' },
+  //   { text: 'text-cart-08' },
+  //   { text: 'text-cart-09' },
+  // ];
+  // textItems.forEach((item, index) => {
+  //   const selectText = document.getElementById(item.text);
+  //   if (selectText) {
+  //     let cartItems = localStorage.getItem('productsInCart');
+  //     if (cartItems) {
+  //       cartItems = JSON.parse(cartItems);
+  //       // Get the corresponding product from the products array
+  //       const product = products[index];
+  //       const cartProduct = cartItems[product.name];
+  //       if (cartProduct) {
+  //         selectText.textContent = `${cartProduct.inCart}`; // Update displayed quantity
+  //       }
+  //     }
+  //   }
+  // });
+}
 
 function onLoadCartQty() {
   let incrementItems = [
@@ -150,70 +158,81 @@ function onLoadCartQty() {
     { increment: 'select-increment-09', text: 'text-cart-09' },
   ];
 
-  incrementItems.forEach((item) => {
-    const selectbtnInc = document.getElementById(item.increment);
-    const selectText = document.getElementById(item.text);
+  incrementItems.forEach((item, index) => {
+    let selectbtnInc = document.getElementById(item.increment);
+    let selectText = document.getElementById(item.text);
 
-    if (selectbtnInc && selectText) {
-      let cartItems = localStorage.getItem('productsInCart');
-      if (cartItems) {
+    if (selectbtnInc) {
+      selectbtnInc.addEventListener('click', () => {
+        let cartItems = localStorage.getItem('productsInCart');
         cartItems = JSON.parse(cartItems);
 
-        // Loop through products to display their inCart values
-        products.forEach((product, index) => {
-          const productName = product.name;
-          const cartProduct = cartItems[productName];
+        if (selectText && cartItems) {
+          let selectText = document.getElementById(item.text);
+          let cartItems = localStorage.getItem('productsInCart');
+          cartItems = JSON.parse(cartItems);
 
-          if (cartProduct) {
-            const selectText = document.getElementById(
-              `text-cart-0${index + 1}`
-            );
-            if (selectText) {
-              selectText.textContent = `${cartProduct.inCart}`; // Update displayed quantity
-            }
+          const product = products[index];
+          const cartProduct = cartItems[product.name];
+          if (cartProduct && cartItems) {
+            let cartItems = localStorage.getItem('productsInCart');
+            cartItems = JSON.parse(cartItems);
+            selectText.textContent = `${cartProduct.inCart}`;
+            console.log('running step 2:', `${cartProduct.inCart}`);
           }
-        });
-      }
+        }
+      });
     }
   });
 }
 
 // function onLoadCartQty() {
 //   let incrementItems = [
-//     { increment: 'select-increment-01', text: 'text-cart-01' },
-//     { increment: 'select-increment-02', text: 'text-cart-02' },
-//     { increment: 'select-increment-03', text: 'text-cart-03' },
-//     { increment: 'select-increment-04', text: 'text-cart-04' },
-//     { increment: 'select-increment-05', text: 'text-cart-05' },
-//     { increment: 'select-increment-06', text: 'text-cart-06' },
-//     { increment: 'select-increment-07', text: 'text-cart-07' },
-//     { increment: 'select-increment-08', text: 'text-cart-08' },
-//     { increment: 'select-increment-09', text: 'text-cart-09' },
+//     { increment: 'select-increment-01' },
+//     { increment: 'select-increment-02' },
+//     { increment: 'select-increment-03' },
+//     { increment: 'select-increment-04' },
+//     { increment: 'select-increment-05' },
+//     { increment: 'select-increment-06' },
+//     { increment: 'select-increment-07' },
+//     { increment: 'select-increment-08' },
+//     { increment: 'select-increment-09' },
 //   ];
 
-//   incrementItems.forEach((item, index) => {
-//     const selectbtnInc = document.getElementById(item.increment);
-//     const selectText = document.getElementById(item.text);
+//   let textItems = [
+//     { text: 'text-cart-01' },
+//     { text: 'text-cart-02' },
+//     { text: 'text-cart-03' },
+//     { text: 'text-cart-04' },
+//     { text: 'text-cart-05' },
+//     { text: 'text-cart-06' },
+//     { text: 'text-cart-07' },
+//     { text: 'text-cart-08' },
+//     { text: 'text-cart-09' },
+//   ];
 
-//     if (selectbtnInc) {
-//       selectbtnInc.addEventListener('click', () => {
-//         let cartItems = localStorage.getItem('productsInCart');
-//         cartItems = JSON.parse(cartItems);
+//   incrementItems.forEach((item) => {
+//     const selectBtnInc = document.getElementById(item.increment);
+//     if (selectBtnInc) {
+//       selectBtnInc.addEventListener('click', () => {
+//         console.log('click event listener');
+//         textItems.forEach((item, index) => {
+//           const selectText = document.getElementById(item.text);
+//           if (selectText) {
+//             let cartItems = localStorage.getItem('productsInCart');
+//             if (cartItems) {
+//               cartItems = JSON.parse(cartItems);
 
-//         if (cartItems) {
-//           const product = cartItems[products[index].name];
+//               // Get the corresponding product from the products array
+//               const product = products[index];
+//               const cartProduct = cartItems[product.name];
 
-//           let cartItems = localStorage.getItem('productsInCart');
-//           if (cartItems) {
-//             cartItems = JSON.parse(cartItems);
-//             const productName = products[index].name;
-//             const product = cartItems[productName];
-//             if (product) {
-//               selectText.textContent = `${product.inCart}`; // Update displayed quantity
+//               if (cartProduct) {
+//                 selectText.textContent = `${cartProduct.inCart}`; // Update displayed quantity
+//               }
 //             }
-//           } else {
 //           }
-//         }
+//         });
 //       });
 //     }
 //   });
@@ -421,5 +440,4 @@ function cartSelected() {
 
 cartSelected();
 onLoadCartNumbers();
-onLoadQty();
-onLoadCartQty();
+// onLoadCartQty();
